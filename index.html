@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Hockey — Video Analysis & Training</title>
+<link rel="icon" href="images/dsa-logo.png" type="image/png">
+<meta name="description" content="Private one-on-one video analysis for off-ice hockey training. Send a clip. Get personalized feedback — drills built just for you.">
+<meta property="og:title" content="DSA Hockey — Frame-by-Frame Analysis">
+<meta property="og:description" content="Send a 30-sec clip. Get a breakdown + custom drills built for YOUR mechanics.">
+<meta property="og:type" content="website">
+<meta property="og:image" href="images/dsa-logo.png">
+<style>
+/* ═══════════════════════════════════════════════
+   DSA HOCKEY — Premium Landing Page v2.0
+   ═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #050508;
+  color: #fff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+:root {
+  --ice: #8ab4f8;
+  --ice-light: #a8ccff;
+  --ice-dark: #5b96e0;
+  --ice-glow: rgba(138, 180, 248, 0.15);
+  --ice-glow-strong: rgba(138, 180, 248, 0.25);
+  --bg: #050508;
+  --card: rgba(255, 255, 255, 0.03);
+  --card-hover: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --card-border-hover: rgba(138, 180, 248, 0.3);
+  --text: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-dim: #5f6368;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+/* ═══ UTILITIES ═══ */
+.container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 480px) { .container { padding: 0 16px; } }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* ═══ GRADIENT MESH BACKGROUND ═══ */
+body::before {
+  content: '';
+  position: fixed;
+  top: -40%; left: -20%;
+  width: 140%; height: 140%;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 10%, rgba(138,180,248,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 80% 30%, rgba(91,150,224,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 300px at 50% 80%, rgba(138,180,248,0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══ NAV ═══ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(5, 5, 8, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 14px 0;
+}
+.nav-inner {
+  max-width: 720px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
+.nav-logo img { height: 32px; width: 32px; border-radius: 6px; }
+.nav-logo span { font-weight: 800; font-size: 0.95em; letter-spacing: -0.02em; }
+.nav-cta {
+  background: var(--ice); color: #050508;
+  padding: 8px 18px; border-radius: 8px;
+  text-decoration: none; font-weight: 700; font-size: 0.85em;
+  transition: all 0.2s;
+}
+.nav-cta:hover { background: var(--ice-light); transform: translateY(-1px); }
+
+/* ═══ HERO ═══ */
+.hero {
+  position: relative; z-index: 1;
+  text-align: center;
+  padding: 140px 20px 80px;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(138,180,248,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--ice-glow);
+  border: 1px solid rgba(138,180,248,0.2);
+  padding: 6px 14px; border-radius: 100px;
+  font-size: 0.78em; font-weight: 600;
+  color: var(--ice);
+  margin-bottom: 28px;
+  letter-spacing: 0.03em;
+}
+.hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ice); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.hero img.logo {
+  width: 90px; height: 90px;
+  border-radius: 20px;
+  margin-bottom: 24px;
+  border: 2px solid rgba(138,180,248,0.15);
+  box-shadow: 0 0 60px rgba(138,180,248,0.1);
+}
+.hero h1 {
+  font-size: clamp(2.2em, 7vw, 3.2em);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, var(--ice-light) 50%, var(--ice) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero .tagline {
+  font-size: clamp(1em, 3vw, 1.15em);
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, var(--ice), var(--ice-dark));
+  color: #050508;
+  padding: 16px 36px; border-radius: 12px;
+  text-decoration: none; font-weight: 800; font-size: 1.05em;
+  letter-spacing: -0.01em;
+  transition: all 0.3s;
+  box-shadow: 0 4px 24px rgba(138,180,248,0.3);
+}
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(138,180,248,0.4);
+}
+.hero-cta svg { width: 18px; height: 18px; }
+.hero-sub {
+  margin-top: 14px;
+  font-size: 0.82em;
+  color: var(--text-dim);
+}
+.hero-sub strong { color: var(--text-secondary); }
+
+/* ═══ ANALYSIS SHOWCASE ═══ */
+.showcase {
+  position: relative; z-index: 1;
+  padding: 60px 0;
+}
+.showcase-inner {
+  max-width: 720px; margin: 0 auto; padding: 0 24px;
+}
+.showcase-img {
+  width: 100%;
+  border-radius: var(--radius);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.showcase-caption {
+  text-align: center;
+  margin-top: 16px;
+  font-size: 0.88em;
+  color: var(--text-dim);
+  font-style: italic;
+}
+
+/* ═══ SECTIONS ═══ */
+.section {
+  position: relative; z-index: 1;
+  padding: 70px 0;
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.section-header h2 {
+  font-size: clamp(1.4em, 4.5vw, 1.9em);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.section-header p {
+  font-size: 1em;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto;
+}
+.accent { color: var(--ice); }
+
+/* ═══ PROCESS ═══ */
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 500px) { .process-grid { grid-template-columns: 1fr 1fr; gap: 12px; } }
+@media (max-width: 380px) { .process-grid { grid-template-columns: 1fr; } }
+
+.process-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  text-align: center;
+  transition: all 0.3s;
+}
+.process-card:hover {
+  background: var(--card-hover);
+  border-color: rgba(138,180,248,0.15);
+  transform: translateY(-2px);
+}
+.process-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  background: var(--ice-glow);
+  border: 1px solid rgba(138,180,248,0.2);
+  border-radius: 12px;
+  font-size: 1.1em; font-weight: 800;
+  color: var(--ice);
+  margin-bottom: 14px;
+}
+.process-card h3 {
+  font-size: 0.95em; font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.process-card p {
+  font-size: 0.82em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ═══ COMPARISON ═══ */
+.compare-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+@media (max-width: 500px) { .compare-cards { grid-template-columns: 1fr; } }
+
+.compare-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+}
+.compare-card.bad { border-color: rgba(255,100,100,0.15); }
+.compare-card.bad .compare-label { color: #ff6b6b; }
+.compare-card.good {
+  border-color: rgba(138,180,248,0.2);
+  background: rgba(138,180,248,0.03);
+}
+.compare-card.good .compare-label { color: var(--ice); }
+
+.compare-label {
+  font-size: 0.75em; font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+.compare-card h3 {
+  font-size: 1.1em; font-weight: 700;
+  margin-bottom: 10px;
+  color: #fff;
+}
+.compare-card ul {
+  list-style: none;
+}
+.compare-card ul li {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  padding: 5px 0;
+  padding-left: 20px;
+  position: relative;
+}
+.compare-card.bad ul li::before { content: '✗'; position: absolute; left: 0; color: rgba(255,100,100,0.6); }
+.compare-card.good ul li::before { content: '✓'; position: absolute; left: 0; color: var(--ice); font-weight: 700; }
+
+.younger-callout {
+  background: linear-gradient(135deg, rgba(138,180,248,0.06), rgba(138,180,248,0.02));
+  border: 1px solid rgba(138,180,248,0.12);
+  border-radius: var(--radius);
+  padding: 28px;
+  text-align: center;
+}
+.younger-callout h3 {
+  font-size: 1.1em; font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--ice-light);
+}
+.younger-callout p {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* ═══ PRICING ═══ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 700px) { .pricing-grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; } }
+
+.pricing-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+}
+.pricing-card:hover {
+  border-color: var(--card-border-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+.pricing-card.featured {
+  background: rgba(138,180,248,0.04);
+  border-color: rgba(138,180,248,0.25);
+}
+.pricing-card.featured::before {
+  content: 'MOST POPULAR';
+  position: absolute;
+  top: -11px; left: 50%; transform: translateX(-50%);
+  background: linear-gradient(135deg, var(--ice), var(--ice-dark));
+  color: #050508;
+  font-size: 0.68em; font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 4px 14px;
+  border-radius: 100px;
+}
+.pricing-card h3 {
+  font-size: 1em; font-weight: 700;
+  margin-bottom: 4px;
+  color: #fff;
+}
+.pricing-card .price {
+  font-size: 2.4em; font-weight: 900;
+  color: #fff;
+  margin: 12px 0;
+  letter-spacing: -0.03em;
+}
+.pricing-card .price span {
+  font-size: 0.38em; font-weight: 500;
+  color: var(--text-dim);
+  letter-spacing: 0;
+}
+.pricing-card ul {
+  list-style: none;
+  text-align: left;
+  margin: 20px 0;
+}
+.pricing-card ul li {
+  font-size: 0.82em;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  padding-left: 22px;
+  position: relative;
+}
+.pricing-card ul li::before {
+  content: '✓';
+  position: absolute; left: 0;
+  color: var(--ice);
+  font-weight: 700;
+}
+.pricing-btn {
+  display: block;
+  width: 100%;
+  background: var(--ice);
+  color: #050508;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9em;
+  transition: all 0.2s;
+}
+.pricing-btn:hover { background: var(--ice-light); }
+.pricing-card.featured .pricing-btn {
+  background: linear-gradient(135deg, var(--ice), var(--ice-dark));
+  box-shadow: 0 4px 16px rgba(138,180,248,0.25);
+}
+.pricing-card.featured .pricing-btn:hover {
+  box-shadow: 0 6px 24px rgba(138,180,248,0.35);
+}
+
+/* ═══ TESTIMONIALS ═══ */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 600px) { .testimonial-grid { grid-template-columns: 1fr; } }
+
+.testimonial-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: all 0.3s;
+}
+.testimonial-card:hover {
+  border-color: rgba(138,180,248,0.15);
+}
+.testimonial-stars {
+  color: var(--ice);
+  font-size: 0.85em;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.testimonial-quote {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.testimonial-author {
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--text);
+}
+.testimonial-role {
+  font-size: 0.75em;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+/* ═══ FAQ ═══ */
+.faq-list {
+  max-width: 580px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 20px 0;
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-item h3 {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.faq-item p {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ═══ BOTTOM CTA ═══ */
+.cta-section {
+  position: relative; z-index: 1;
+  padding: 80px 0 100px;
+  text-align: center;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 500px; height: 300px;
+  background: radial-gradient(ellipse, rgba(138,180,248,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-section h2 {
+  font-size: clamp(1.6em, 5vw, 2.2em);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.cta-section p {
+  font-size: 1em;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.cta-section .instructions {
+  font-size: 0.85em;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-section .instructions strong { color: var(--text-secondary); }
+
+/* ═══ FOOTER ═══ */
+.footer {
+  position: relative; z-index: 1;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  text-align: center;
+}
+.footer p {
+  font-size: 0.82em;
+  color: var(--text-dim);
+  margin-bottom: 6px;
+}
+.footer a {
+  color: var(--ice);
+  text-decoration: none;
+}
+.footer a:hover { color: var(--ice-light); }
+
+/* ═══ STICKY MOBILE CTA ═══ */
+.sticky-cta {
+  display: none;
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  z-index: 200;
+  background: rgba(5, 5, 8, 0.92);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(138,180,248,0.15);
+  padding: 12px 16px;
+  text-align: center;
+}
+.sticky-cta a {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: linear-gradient(135deg, var(--ice), var(--ice-dark));
+  color: #050508;
+  padding: 12px 28px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 0.95em;
+  box-shadow: 0 4px 16px rgba(138,180,248,0.3);
+}
+@media (max-width: 600px) {
+  .sticky-cta { display: block; }
+  body { padding-bottom: 70px; }
+}
+
+/* ═══ DIVIDER ═══ */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(138,180,248,0.1), transparent);
+  margin: 0;
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="images/dsa-logo.png" alt="DSA Hockey">
+      <span>DSA Hockey</span>
+    </a>
+    <a href="https://paypal.me/MichaelFranzoni99/49" class="nav-cta">Book Analysis — $49</a>
+  </div>
+</nav>
+
+<!-- STICKY MOBILE CTA -->
+<div class="sticky-cta">
+  <a href="https://paypal.me/MichaelFranzoni99/49">
+    Book Analysis — $49
+    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"/></svg>
+  </a>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge"><span class="dot"></span> 48-hour turnaround</div>
+  <img src="images/dsa-logo.png" alt="DSA Hockey" class="logo">
+  <h1>Your Shot,<br>Broken Down.</h1>
+  <p class="tagline">Private frame-by-frame video analysis for off-ice hockey training. Send a clip. Get personalized feedback — drills built just for you, not a group.</p>
+  <a href="https://paypal.me/MichaelFranzoni99/49" class="hero-cta">
+    Book Analysis — $49
+    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"/></svg>
+  </a>
+  <p class="hero-sub">Or try the <strong>DSA System</strong> — <a href="https://paypal.me/MichaelFranzoni99/79" style="color:var(--ice);text-decoration:none;">$79 drill library</a> with 30+ off-ice drills.</p>
+</section>
+
+<!-- ANALYSIS SHOWCASE -->
+<section class="showcase">
+  <div class="showcase-inner">
+    <img src="images/analysis-example.png" alt="Example of DSA Hockey video analysis" class="showcase-img">
+    <p class="showcase-caption">This is exactly what you receive — slow-mo breakdown, annotations, and a voice-over explaining what to fix and why.</p>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>How It <span class="accent">Works</span></h2>
+      <p>Four steps. No apps. No waiting rooms. Just your video and full attention.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="process-num">1</div>
+        <h3>Send Your Clip</h3>
+        <p>30–60 seconds of your off-ice training. Side angle, full body in frame.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">2</div>
+        <h3>Get the Breakdown</h3>
+        <p>Slow-mo replay, voice-over commentary, and annotations showing exactly what to fix.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">3</div>
+        <h3>Custom Drills</h3>
+        <p>A drill plan targeting what YOUR video shows you need — not a generic template.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">4</div>
+        <h3>Repeat & Improve</h3>
+        <p>Practice. Send your next clip. Track real progress over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT MAKES THIS DIFFERENT -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Why <span class="accent">DSA</span> Hockey</h2>
+      <p>What you get with a normal coach vs. what you get here.</p>
+    </div>
+    <div class="compare-cards">
+      <div class="compare-card bad">
+        <div class="compare-label">Traditional Coach</div>
+        <h3>15+ kids on the ice</h3>
+        <ul>
+          <li>Split attention across the group</li>
+          <li>Can't catch every bad habit</li>
+          <li>Generic drills for everyone</li>
+          <li>Hard to track individual progress</li>
+        </ul>
+      </div>
+      <div class="compare-card good">
+        <div class="compare-label">DSA Hockey</div>
+        <h3>100% on YOUR mechanics</h3>
+        <ul>
+          <li>Frame-by-frame focus on one player</li>
+          <li>Catches what coaches miss</li>
+          <li>Drills designed for YOUR flaws</li>
+          <li>Measurable improvement each cycle</li>
+        </ul>
+      </div>
+    </div>
+    <div class="younger-callout">
+      <h3>⚡ Especially powerful for younger players</h3>
+      <p>The earlier you lock in proper shot technique, the more it pays off as you grow. Bad habits at 12 turn into ceiling caps at 18. Don't let that happen.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>Pricing</h2>
+      <p>Three ways to level up your game.</p>
+    </div>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <h3>Single Analysis</h3>
+        <div class="price">$49<span>/analysis</span></div>
+        <ul>
+          <li>1 video breakdown</li>
+          <li>Voice-over commentary</li>
+          <li>Slow-motion + annotations</li>
+          <li>48-hour turnaround</li>
+        </ul>
+        <a href="https://paypal.me/MichaelFranzoni99/49" class="pricing-btn">Pay $49</a>
+      </div>
+      <div class="pricing-card featured">
+        <h3>Monthly Coaching</h3>
+        <div class="price">$149<span>/month</span></div>
+        <ul>
+          <li>4 video breakdowns</li>
+          <li>Custom drill plan from your analysis</li>
+          <li>Drills built for YOUR mechanics</li>
+          <li>Priority DM access</li>
+        </ul>
+        <a href="https://paypal.me/MichaelFranzoni99/149" class="pricing-btn">Pay $149/mo</a>
+      </div>
+      <div class="pricing-card">
+        <h3>DSA System</h3>
+        <div class="price">$79<span>/one-time</span></div>
+        <ul>
+          <li>30+ off-ice shooting drills</li>
+          <li>Stickhandling progressions</li>
+          <li>Form cues for each drill</li>
+          <li>Lifetime access + updates</li>
+        </ul>
+        <a href="https://paypal.me/MichaelFranzoni99/79" class="pricing-btn">Pay $79</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>What <span class="accent">Parents</span> & Players Say</h2>
+    </div>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"My son is 12 and we noticed he was bringing his hands way too high on his release. Sent a clip to DSA and got back a 4-minute breakdown pinpointing exactly when he does it and why. Night and day after two weeks."</p>
+        <p class="testimonial-author">Ryan M.</p>
+        <p class="testimonial-role">Father of U12 player, Massachusetts</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"My 9-year-old's form looked fine to me. DSA caught that his right foot was drifting behind him on every wrist shot. Three weeks of the corrected setup and his release is noticeably faster."</p>
+        <p class="testimonial-author">Dave K.</p>
+        <p class="testimonial-role">Dad of U10 forward, New Jersey</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"Sent a clip from my driveway thinking my shot was OK. DSA showed me I was rolling my wrists wrong and losing power. First game back I scored from the circle. My shot is finally catching up to my size."</p>
+        <p class="testimonial-author">Jake T.</p>
+        <p class="testimonial-role">U16 player, Ontario</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-quote">"We've spent thousands on camps and private lessons. 8 kids share one coach for 45 minutes. With DSA I sent a 40-second clip and got back a full breakdown with drills my daughter could do the next day. Way more value."</p>
+        <p class="testimonial-author">Lisa R.</p>
+        <p class="testimonial-role">Mother of U14 player, Michigan</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What kind of clips should I send?</h3>
+        <p>Any off-ice training — shooting, stickhandling, edge work, weight transfer drills. 30–60 seconds is ideal. Record horizontally. Slow-motion on your phone is helpful but not required.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How is this different from a regular coach?</h3>
+        <p>On-ice coaches split attention across 10–20 kids. They miss details. I look at your clip frame-by-frame with nothing else to focus on. The drills I give you are built around what I see in YOUR video, not a generic template.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is this for younger players too?</h3>
+        <p>Absolutely. The best time to fix form is early. If a 9-year-old learns proper weight transfer and hand positioning now, they'll have a much harder shot at 14 than someone who picked up bad habits. I work with all ages.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How long until I get my analysis back?</h3>
+        <p>48 hours guaranteed. Most are back within 24.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What if I want to keep sending clips?</h3>
+        <p>The Monthly Coaching tier ($149/mo) covers 4 breakdowns per month plus a custom off-ice drill plan we update as you improve. You get better every cycle.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to <span class="accent">Level Up</span>?</h2>
+    <p>Pay above, then text your clip to <strong>908-675-3755</strong></p>
+    <p class="instructions">Film from the <strong>side</strong> — full body in frame. 30–60 seconds. Include your name and what you want to work on.</p>
+    <a href="https://paypal.me/MichaelFranzoni99/49" class="hero-cta">
+      Book Analysis — $49
+      <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"/></svg>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p><a href="https://www.instagram.com/dsahockey/">@dsahockey</a></p>
+    <p>📞 908-675-3755 · ✉️ dsahockeynj@gmail.com</p>
+    <p style="margin-top:12px;">DSA Hockey © 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
