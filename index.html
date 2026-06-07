@@ -602,35 +602,6 @@ body::before {
 }
 .footer a:hover { color: var(--ice-light); }
 
-/* ═══ STICKY MOBILE CTA ═══ */
-.sticky-cta {
-  display: none;
-  position: fixed;
-  bottom: 0; left: 0; right: 0;
-  z-index: 200;
-  background: rgba(5, 5, 8, 0.92);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-top: 1px solid rgba(138,180,248,0.15);
-  padding: 12px 16px;
-  text-align: center;
-}
-.sticky-cta a {
-  display: inline-flex; align-items: center; gap: 8px;
-  background: linear-gradient(135deg, var(--ice), var(--ice-dark));
-  color: #050508;
-  padding: 12px 28px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: 800;
-  font-size: 0.95em;
-  box-shadow: 0 4px 16px rgba(138,180,248,0.3);
-}
-@media (max-width: 600px) {
-  .sticky-cta { display: block; }
-  body { padding-bottom: 70px; }
-}
-
 /* ═══ DIVIDER ═══ */
 .section-divider {
   height: 1px;
@@ -690,14 +661,6 @@ body::before {
     <a href="https://paypal.me/MichaelFranzoni99/49" class="nav-cta">Book Analysis — $49</a>
   </div>
 </nav>
-
-<!-- STICKY MOBILE CTA -->
-<div class="sticky-cta">
-  <a href="https://paypal.me/MichaelFranzoni99/49">
-    Book Analysis — $49
-    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"/></svg>
-  </a>
-</div>
 
 <!-- HERO -->
 <section class="hero">
