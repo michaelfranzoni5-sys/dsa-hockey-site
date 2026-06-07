@@ -252,7 +252,10 @@ body::before {
   max-width: 720px; margin: 0 auto; padding: 0 24px;
 }
 .showcase-img {
-  width: 100%;
+  width: 70%;
+  max-width: 500px;
+  display: block;
+  margin: 0 auto;
   border-radius: var(--radius);
   border: 1px solid var(--card-border);
   box-shadow: 0 20px 60px rgba(0,0,0,0.5);
@@ -643,11 +646,11 @@ body::before {
 }
 .about-img {
   flex-shrink: 0;
-  width: 200px;
-  height: 200px;
-  border-radius: 50%;
+  width: 220px;
+  height: 280px;
+  border-radius: 16px;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center top;
   border: 2px solid rgba(138,180,248,0.2);
   box-shadow: 0 0 40px rgba(138,180,248,0.08);
 }
@@ -672,7 +675,7 @@ body::before {
 }
 @media (max-width: 600px) {
   .about-grid { flex-direction: column; text-align: center; gap: 24px; }
-  .about-img { width: 160px; height: 160px; }
+  .about-img { width: 180px; height: 230px; }
 }
 </style>
 </head>
