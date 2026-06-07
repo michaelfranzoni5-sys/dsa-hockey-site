@@ -592,15 +592,20 @@ body::before {
   text-align: center;
 }
 .footer p {
-  font-size: 0.82em;
-  color: var(--text-dim);
-  margin-bottom: 6px;
+  font-size: 0.95em;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
 }
 .footer a {
   color: var(--ice);
   text-decoration: none;
+  font-weight: 600;
 }
 .footer a:hover { color: var(--ice-light); }
+.footer .footer-divider {
+  margin: 0 8px;
+  color: var(--text-dim);
+}
 
 /* ═══ DIVIDER ═══ */
 .section-divider {
@@ -893,9 +898,9 @@ body::before {
 <!-- FOOTER -->
 <footer class="footer">
   <div class="container">
-    <p><a href="https://www.instagram.com/dsahockey/">@dsahockey</a></p>
-    <p>📞 908-675-3755 · ✉️ dsahockeynj@gmail.com</p>
-    <p style="margin-top:12px;">DSA Hockey © 2026</p>
+    <p><a href="https://www.instagram.com/dsahockey/" target="_blank">@dsahockey</a></p>
+    <p>📞 908-675-3755 <span class="footer-divider">·</span> ✉️ <a href="mailto:dsahockeynj@gmail.com">dsahockeynj@gmail.com</a></p>
+    <p style="margin-top:16px;">DSA Hockey © 2026</p>
   </div>
 </footer>
 
