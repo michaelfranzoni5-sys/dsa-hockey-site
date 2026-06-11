@@ -838,12 +838,12 @@ body::before {
         <h3>Monthly Coaching</h3>
         <div class="price">$149<span>/month</span></div>
         <ul>
-          <li>4 video breakdowns</li>
-          <li>Custom drill plan from your analysis</li>
-          <li>Drills built for YOUR mechanics</li>
-          <li>Priority DM access</li>
+          <li><strong>4 video breakdowns</strong> — one per week</li>
+          <li><strong>Custom drill plan</strong> built from what YOUR video shows</li>
+          <li><strong>Drills evolve</strong> each month as you improve</li>
+          <li>Priority DM access — reply within 24hrs</li>
         </ul>
-        <a href="https://paypal.me/MichaelFranzoni99/149" class="pricing-btn">Pay $149/mo</a>
+        <a href="https://paypal.me/MichaelFranzoni99/149" class="pricing-btn">Pay $149 — Next Month</a>
       </div>
       <div class="pricing-card">
         <h3>DSA System</h3>
@@ -857,8 +857,103 @@ body::before {
         <a href="https://paypal.me/MichaelFranzoni99/79" class="pricing-btn">Pay $79</a>
       </div>
     </div>
+    <div class="pricing-note">
+      <div class="pricing-note-card">
+        <h4>How Monthly Coaching Works</h4>
+        <div class="monthly-flow">
+          <div class="monthly-step">
+            <span class="monthly-num">1</span>
+            <p>Send a 30-sec clip every week</p>
+          </div>
+          <div class="monthly-arrow">→</div>
+          <div class="monthly-step">
+            <span class="monthly-num">2</span>
+            <p>I break it down frame-by-frame with voice-over + annotations</p>
+          </div>
+          <div class="monthly-arrow">→</div>
+          <div class="monthly-step">
+            <span class="monthly-num">3</span>
+            <p>I build 3 custom drills targeting what YOU need to fix</p>
+          </div>
+          <div class="monthly-arrow">→</div>
+          <div class="monthly-step">
+            <span class="monthly-num">4</span>
+            <p>You practice, send next clip — drills evolve as you improve</p>
+          </div>
+        </div>
+        <p class="monthly-cta-note">Each month builds on the last. Your first month fixes the biggest flaws. Month 2 refines technique. Month 3 locks it in. <strong>This is the difference between getting a one-time opinion and having a real coach who tracks your progress.</strong></p>
+        <p class="monthly-pay-note">Pay at the start of each month. Text your first clip to <strong>908-675-3755</strong> right after. I'll have your first breakdown back within 48 hours.</p>
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+/* ═══ PRICING NOTE / MONTHLY FLOW ═══ */
+.pricing-note { margin-top: 28px; }
+.pricing-note-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 32px 28px;
+}
+@media (max-width: 480px) { .pricing-note-card { padding: 24px 18px; } }
+.pricing-note-card h4 {
+  font-size: 1.1em; font-weight: 800;
+  color: var(--ice-light);
+  text-align: center;
+  margin-bottom: 24px;
+}
+.monthly-flow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+@media (max-width: 600px) { .monthly-flow { flex-direction: column; align-items: center; gap: 8px; } }
+.monthly-step {
+  flex: 1;
+  text-align: center;
+}
+.monthly-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 32px; height: 32px;
+  background: var(--ice-glow);
+  border: 1px solid rgba(138,180,248,0.2);
+  border-radius: 50%;
+  font-size: 0.85em; font-weight: 800;
+  color: var(--ice);
+  margin-bottom: 8px;
+}
+.monthly-step p {
+  font-size: 0.82em;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+.monthly-arrow {
+  font-size: 1.2em;
+  color: var(--ice);
+  padding-top: 6px;
+  flex-shrink: 0;
+}
+@media (max-width: 600px) { .monthly-arrow { transform: rotate(90deg); padding: 0; } }
+.monthly-cta-note {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  text-align: center;
+  max-width: 520px;
+  margin: 0 auto 16px;
+}
+.monthly-cta-note strong { color: var(--text); }
+.monthly-pay-note {
+  font-size: 0.85em;
+  color: var(--text-dim);
+  text-align: center;
+  margin: 0;
+}
+.monthly-pay-note strong { color: var(--text-secondary); }
+</style>
 
 <!-- DSA SYSTEM DETAIL -->
 <section class="section" id="dsa-system">
