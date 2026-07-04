@@ -269,6 +269,32 @@ body::before {
 }
 .hero-sub strong { color: var(--text-secondary); }
 
+/* ═══ HERO PULL QUOTE ═══ */
+.hero-quote {
+  max-width: 420px;
+  margin: 24px auto 28px;
+  padding: 0 0 0 18px;
+  border-left: 2px solid rgba(138, 180, 248, 0.2);
+  text-align: left;
+}
+.hero-quote p {
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+.hero-quote cite {
+  font-size: 0.72em;
+  font-style: normal;
+  color: var(--text-dim);
+  display: block;
+}
+@media (max-width: 480px) {
+  .hero-quote { margin: 20px auto 24px; padding: 0 0 0 14px; }
+  .hero-quote p { font-size: 0.82em; }
+}
+
 /* ═══ ANALYSIS SHOWCASE ═══ */
 .showcase {
   position: relative; z-index: 1;
@@ -729,6 +755,10 @@ body::before {
   <div class="hero-badge"><span class="dot"></span> 48-hour turnaround</div>
   <h1>Your Shot,<br>Broken Down.</h1>
   <p class="tagline">Private video analysis for off-ice hockey training. Send a clip. Get personalized feedback — drills built just for you, not a group.</p>
+  <div class="hero-quote">
+    <p>"I spent countless hours in the garage shooting pucks. That's where I really learned to shoot — just me, a net, and a bucket of pucks."</p>
+    <cite>— Brendan Gallagher — 13 seasons, Montreal Canadiens</cite>
+  </div>
   <a href="#pricing" class="hero-cta">
     Get Breakdown + Drills — $69
     <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"/></svg>
