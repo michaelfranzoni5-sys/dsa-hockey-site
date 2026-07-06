@@ -1,0 +1,48 @@
+[
+  {
+    "id": "wrist-shot-weight-transfer",
+    "title": "Weight Transfer Wrist Shot",
+    "category": "shooting",
+    "duration": "2:30",
+    "description": "Learn how to properly transfer your weight from back foot to front foot on a wrist shot. This drill breaks down the kinetic chain — from your feet through your hips and core into your release.",
+    "youtubeId": "",
+    "dos": [
+      "Start with weight on your back foot",
+      "Step into the puck as you release",
+      "Point your toe where you want the puck to go",
+      "Keep your hands away from your body",
+      "Follow through — blade should point at target"
+    ],
+    "donts": [
+      "Keep your weight centered — you'll lose power",
+      "Open your shoulders before the puck leaves",
+      "Look up before finishing your release",
+      "Cradle the puck too long — get it off quick"
+    ],
+    "keyCues": ["Toe to target", "Step through it", "Hands free"],
+    "commonMistakes": ["Rolling wrists on release", "Fading left/right off target", "No follow through"],
+    "relatedDrills": ["quick-release-drill", "one-timer-foundation"]
+  },
+  {
+    "id": "puck-handling-basics",
+    "title": "Foundation Stickhandling",
+    "category": "stickhandling",
+    "duration": "3:15",
+    "description": "Stationary stickhandling drill to build soft hands and puck feel. Focuses on top-hand control, wrist flexion, and keeping your head up.",
+    "youtubeId": "",
+    "dos": [
+      "Keep your top hand loose — it controls the blade",
+      "Cup the puck with the blade",
+      "Keep your eyes up, feel the puck",
+      "Use your wrist, not your whole arm"
+    ],
+    "donts": [
+      "Death grip the stick — choke it and you lose feel",
+      "Look down at the puck",
+      "Slap at the puck — smooth controlled touches"
+    ],
+    "keyCues": ["Soft hands", "Eyes up", "Feel it, don't look at it"],
+    "commonMistakes": ["Arm swinging too wide", "Puck bouncing off blade"],
+    "relatedDrills": ["figure-eight-stickhandling", "through-cones-series"]
+  }
+]

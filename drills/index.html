@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Hockey Drill Library</title>
+<link rel="icon" href="../images/dsa-logo.png" type="image/png">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #050508;
+  color: #fff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+:root {
+  --ice: #8ab4f8;
+  --ice-light: #a8ccff;
+  --ice-dark: #5b96e0;
+  --ice-glow: rgba(138, 180, 248, 0.15);
+  --bg: #050508;
+  --card: rgba(255, 255, 255, 0.03);
+  --card-hover: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --text: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-dim: #5f6368;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+body::before {
+  content: '';
+  position: fixed;
+  top: -40%; left: -20%;
+  width: 140%; height: 140%;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 10%, rgba(138,180,248,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 80% 30%, rgba(91,150,224,0.04) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══ NAV ═══ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(5, 5, 8, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 14px 0;
+}
+.nav-inner {
+  max-width: 900px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
+.nav-logo img { height: 32px; width: 32px; border-radius: 6px; }
+.nav-logo span { font-weight: 800; font-size: 0.95em; letter-spacing: -0.02em; }
+.nav-back {
+  background: rgba(255,255,255,0.06);
+  color: var(--text-secondary);
+  padding: 8px 16px; border-radius: 8px;
+  text-decoration: none; font-weight: 600; font-size: 0.82em;
+  transition: all 0.2s;
+}
+.nav-back:hover { background: rgba(255,255,255,0.1); color: #fff; }
+@media (max-width: 480px) {
+  .nav-inner { padding: 0 16px; }
+  .nav-logo span { font-size: 0.85em; }
+}
+
+/* ═══ GATE SCREEN ═══ */
+.gate {
+  position: relative; z-index: 1;
+  min-height: 100vh;
+  display: flex; align-items: center; justify-content: center;
+  padding: 100px 24px 60px;
+}
+.gate-box {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 48px 40px;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+}
+@media (max-width: 480px) { .gate-box { padding: 36px 24px; } }
+.gate-box .lock-icon {
+  font-size: 2.4em;
+  margin-bottom: 16px;
+}
+.gate-box h1 {
+  font-size: 1.3em;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+.gate-box p {
+  font-size: 0.85em;
+  color: var(--text-secondary);
+  margin-bottom: 28px;
+}
+.gate-input {
+  width: 100%;
+  padding: 14px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: 1em;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 14px;
+  text-align: center;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+}
+.gate-input:focus { border-color: var(--ice); }
+.gate-btn {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--ice), var(--ice-dark));
+  color: #050508;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1em;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.gate-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(138,180,248,0.3); }
+.gate-error {
+  color: #ff6b6b;
+  font-size: 0.82em;
+  margin-top: 12px;
+  display: none;
+}
+.gate-help {
+  margin-top: 24px;
+  font-size: 0.78em;
+  color: var(--text-dim);
+}
+.gate-help a { color: var(--ice); text-decoration: none; }
+
+/* ═══ LIBRARY LAYOUT ═══ */
+.library { display: none; }
+.library.active { display: block; }
+.library-header {
+  position: relative; z-index: 1;
+  padding: 100px 24px 0;
+  text-align: center;
+}
+.library-header h1 {
+  font-size: clamp(1.6em, 5vw, 2.2em);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+.library-header p {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  margin-bottom: 4px;
+}
+.library-header .drill-count {
+  font-size: 0.8em;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+}
+
+/* ═══ FILTERS ═══ */
+.filters {
+  position: relative; z-index: 1;
+  max-width: 900px; margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+.filter-btn {
+  padding: 8px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--card-border);
+  border-radius: 100px;
+  color: var(--text-secondary);
+  font-size: 0.82em;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.filter-btn:hover { background: rgba(255,255,255,0.08); color: #fff; }
+.filter-btn.active {
+  background: var(--ice-glow);
+  border-color: rgba(138,180,248,0.3);
+  color: var(--ice);
+}
+@media (max-width: 480px) {
+  .filters { gap: 6px; }
+  .filter-btn { padding: 7px 14px; font-size: 0.76em; }
+}
+
+/* ═══ SEARCH ═══ */
+.search-wrap {
+  position: relative; z-index: 1;
+  max-width: 900px; margin: 0 auto;
+  padding: 0 24px 28px;
+}
+.search-input {
+  width: 100%;
+  padding: 12px 18px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm);
+  color: #fff;
+  font-size: 0.88em;
+  font-family: inherit;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-input:focus { border-color: var(--ice); }
+.search-input::placeholder { color: var(--text-dim); }
+
+/* ═══ DRILL GRID ═══ */
+.drill-grid {
+  position: relative; z-index: 1;
+  max-width: 900px; margin: 0 auto;
+  padding: 0 24px 60px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 680px) { .drill-grid { grid-template-columns: 1fr; } }
+@media (max-width: 480px) { .drill-grid { padding: 0 16px 40px; gap: 12px; } }
+
+/* ═══ DRILL CARD ═══ */
+.drill-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+.drill-card:hover {
+  background: var(--card-hover);
+  border-color: rgba(138,180,248,0.15);
+}
+.drill-thumb {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.drill-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.drill-play {
+  position: absolute;
+  width: 56px; height: 56px;
+  background: rgba(138,180,248,0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+.drill-play svg { width: 24px; height: 24px; fill: #050508; margin-left: 2px; }
+.drill-thumb:hover .drill-play { transform: scale(1.1); }
+.drill-duration {
+  position: absolute;
+  bottom: 8px; right: 8px;
+  background: rgba(0,0,0,0.8);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-size: 0.72em;
+  font-weight: 600;
+  color: #fff;
+}
+.drill-info {
+  padding: 16px 18px 18px;
+}
+.drill-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.drill-cat {
+  display: inline-block;
+  background: var(--ice-glow);
+  border: 1px solid rgba(138,180,248,0.15);
+  color: var(--ice);
+  font-size: 0.68em;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 100px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.drill-title {
+  font-size: 1em;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+.drill-desc {
+  font-size: 0.78em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 12px;
+}
+
+/* ═══ VIDEO OVERLAY ═══ */
+.video-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 200;
+  background: rgba(0,0,0,0.9);
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.video-overlay.active { display: flex; }
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  aspect-ratio: 16/9;
+  background: #000;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.video-container iframe {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  border: none;
+}
+.video-close {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.8em;
+  cursor: pointer;
+  padding: 4px;
+  line-height: 1;
+  opacity: 0.6;
+  transition: opacity 0.2s;
+}
+.video-close:hover { opacity: 1; }
+@media (max-width: 480px) { .video-overlay { padding: 16px; } }
+
+/* ═══ DO / DON'T SECTION ═══ */
+.drill-toggle {
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+}
+.toggle-btn {
+  flex: 1;
+  padding: 8px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid var(--card-border);
+  border-radius: 6px;
+  color: var(--text-secondary);
+  font-size: 0.72em;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: center;
+}
+.toggle-btn:hover { background: rgba(255,255,255,0.08); }
+.toggle-btn.active-dos { background: rgba(100,200,100,0.1); border-color: rgba(100,200,100,0.3); color: #6bc46b; }
+.toggle-btn.active-donts { background: rgba(255,100,100,0.1); border-color: rgba(255,100,100,0.3); color: #ff6b6b; }
+.toggle-content {
+  display: none;
+  margin-top: 10px;
+  padding: 12px;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+}
+.toggle-content.active { display: block; }
+.toggle-content ul {
+  list-style: none;
+  padding: 0;
+}
+.toggle-content li {
+  font-size: 0.76em;
+  color: var(--text-secondary);
+  padding: 4px 0;
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.4;
+}
+.toggle-content li::before {
+  position: absolute;
+  left: 0;
+  font-weight: 700;
+}
+.toggle-content.dos-list li::before {
+  content: '✓';
+  color: #6bc46b;
+}
+.toggle-content.donts-list li::before {
+  content: '✗';
+  color: #ff6b6b;
+}
+
+/* ═══ EMPTY STATE ═══ */
+.empty-state {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  color: var(--text-dim);
+}
+.empty-state p { font-size: 0.88em; }
+
+/* ═══ FOOTER ═══ */
+.footer {
+  position: relative; z-index: 1;
+  text-align: center;
+  padding: 32px 24px;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  font-size: 0.8em;
+  color: var(--text-dim);
+  display: none;
+}
+.footer.active { display: block; }
+.footer a { color: var(--text-secondary); text-decoration: none; }
+.footer a:hover { color: #fff; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="../" class="nav-logo">
+      <img src="../images/dsa-logo.png" alt="DSA Hockey">
+      <span>DSA Hockey</span>
+    </a>
+    <a href="../" class="nav-back">← Back to site</a>
+  </div>
+</nav>
+
+<!-- GATE SCREEN -->
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="lock-icon">🔒</div>
+    <h1>DSA Drill Library</h1>
+    <p>Enter the password from your purchase to access the full library of off-ice drills.</p>
+    <input type="password" class="gate-input" id="passwordInput" placeholder="Enter password" autocomplete="off">
+    <button class="gate-btn" id="unlockBtn">Unlock Library</button>
+    <div class="gate-error" id="gateError">Incorrect password. Try again.</div>
+    <p class="gate-help">Purchased the DSA System?<br>Text Mike at <a href="tel:+19086753755">908-675-3755</a> for your password.</p>
+  </div>
+</div>
+
+<!-- LIBRARY -->
+<div class="library" id="library">
+
+  <div class="library-header">
+    <h1>DSA Drill Library</h1>
+    <p>Off-ice drills for stickhandling, shooting, passing, and more</p>
+    <p class="drill-count" id="drillCount"></p>
+  </div>
+
+  <div class="filters" id="filters"></div>
+
+  <div class="search-wrap">
+    <input type="text" class="search-input" id="searchInput" placeholder="Search drills by name, skill, or keyword...">
+  </div>
+
+  <div class="drill-grid" id="drillGrid"></div>
+
+  <div class="footer" id="footer">
+    <p><a href="https://www.instagram.com/dsahockey/" target="_blank">@dsahockey</a> · <a href="../">dsahockey.com</a></p>
+  </div>
+</div>
+
+<!-- VIDEO OVERLAY -->
+<div class="video-overlay" id="videoOverlay">
+  <div class="video-container">
+    <button class="video-close" id="videoClose">✕</button>
+    <iframe id="videoIframe" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  </div>
+</div>
+
+<script>
+const CORRECT_PASSWORD = 'DSASystem9';
+
+// ── Load drills ──
+let drills = [];
+
+fetch('drills.json')
+  .then(r => r.json())
+  .then(data => {
+    drills = data;
+    initLibrary();
+  });
+
+// ── Gate ──
+document.getElementById('unlockBtn').addEventListener('click', unlock);
+document.getElementById('passwordInput').addEventListener('keydown', e => {
+  if (e.key === 'Enter') unlock();
+});
+
+function unlock() {
+  const pw = document.getElementById('passwordInput').value;
+  if (pw === CORRECT_PASSWORD) {
+    document.getElementById('gate').style.display = 'none';
+    document.getElementById('library').classList.add('active');
+    document.getElementById('footer').classList.add('active');
+    renderDrills(drills);
+  } else {
+    document.getElementById('gateError').style.display = 'block';
+  }
+}
+
+// ── Library initialisation ──
+let activeCategory = 'all';
+let searchQuery = '';
+
+function initLibrary() {
+  // Build category filters
+  const cats = ['all', ...new Set(drills.map(d => d.category))];
+  const filterContainer = document.getElementById('filters');
+  const catLabels = {
+    all: 'All',
+    stickhandling: 'Stickhandling',
+    shooting: 'Shooting',
+    passing: 'Passing',
+    workout: 'Workout',
+    plyometrics: 'Plyometrics'
+  };
+
+  cats.forEach(cat => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn' + (cat === 'all' ? ' active' : '');
+    btn.textContent = catLabels[cat] || cat;
+    btn.dataset.cat = cat;
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      activeCategory = cat;
+      renderDrills(getFilteredDrills());
+    });
+    filterContainer.appendChild(btn);
+  });
+
+  // Search
+  document.getElementById('searchInput').addEventListener('input', e => {
+    searchQuery = e.target.value.toLowerCase();
+    renderDrills(getFilteredDrills());
+  });
+
+  // Update count
+  document.getElementById('drillCount').textContent = `${drills.length} drills`;
+}
+
+function getFilteredDrills() {
+  let filtered = drills;
+  if (activeCategory !== 'all') {
+    filtered = filtered.filter(d => d.category === activeCategory);
+  }
+  if (searchQuery) {
+    filtered = filtered.filter(d =>
+      d.title.toLowerCase().includes(searchQuery) ||
+      d.description.toLowerCase().includes(searchQuery) ||
+      d.keyCues.some(c => c.toLowerCase().includes(searchQuery)) ||
+      d.category.toLowerCase().includes(searchQuery)
+    );
+  }
+  return filtered;
+}
+
+function renderDrills(drillsToRender) {
+  const grid = document.getElementById('drillGrid');
+
+  if (drillsToRender.length === 0) {
+    grid.innerHTML = '<div class="empty-state"><p>No drills match your search. Try a different keyword.</p></div>';
+    return;
+  }
+
+  grid.innerHTML = drillsToRender.map((drill, idx) => `
+    <div class="drill-card">
+      <div class="drill-thumb" data-idx="${idx}" onclick="openVideo('${drill.youtubeId}', this.dataset.idx)">
+        <img src="https://img.youtube.com/vi/${drill.youtubeId || 'placeholder'}/hqdefault.jpg" alt="${drill.title}" onerror="this.style.display='none'">
+        <div class="drill-play">
+          <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <div class="drill-duration">${drill.duration}</div>
+      </div>
+      <div class="drill-info">
+        <div class="drill-meta">
+          <span class="drill-cat">${drill.category}</span>
+        </div>
+        <h3 class="drill-title">${drill.title}</h3>
+        <p class="drill-desc">${drill.description}</p>
+
+        <div class="drill-toggle">
+          <button class="toggle-btn" onclick="showToggle(this, 'dos', ${idx})">✅ Do's</button>
+          <button class="toggle-btn" onclick="showToggle(this, 'donts', ${idx})">❌ Don'ts</button>
+        </div>
+        <div class="toggle-content dos-list" id="dos-${idx}">
+          <ul>${drill.dos.map(d => `<li>${d}</li>`).join('')}</ul>
+        </div>
+        <div class="toggle-content donts-list" id="donts-${idx}">
+          <ul>${drill.donts.map(d => `<li>${d}</li>`).join('')}</ul>
+        </div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function showToggle(btn, type, idx) {
+  const card = btn.closest('.drill-card');
+  // Reset all toggles in this card
+  card.querySelectorAll('.toggle-btn').forEach(b => {
+    b.classList.remove('active-dos', 'active-donts');
+  });
+  card.querySelectorAll('.toggle-content').forEach(c => c.classList.remove('active'));
+
+  // Activate the one clicked
+  btn.classList.add(type === 'dos' ? 'active-dos' : 'active-donts');
+  document.getElementById(`${type}-${idx}`).classList.add('active');
+}
+
+// ── Video overlay ──
+function openVideo(youtubeId, idx) {
+  if (!youtubeId) return;
+  const overlay = document.getElementById('videoOverlay');
+  const iframe = document.getElementById('videoIframe');
+  iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+  overlay.classList.add('active');
+}
+
+document.getElementById('videoClose').addEventListener('click', closeVideo);
+document.getElementById('videoOverlay').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeVideo();
+});
+
+function closeVideo() {
+  document.getElementById('videoOverlay').classList.remove('active');
+  document.getElementById('videoIframe').src = '';
+}
+</script>
+</body>
+</html>
