@@ -181,6 +181,9 @@ body::before {
   white-space: nowrap;
 }
 .nav-link:hover { color: #fff; background: rgba(255,255,255,0.05); }
+@media (max-width: 600px) {
+  .nav-link { display: none; }
+}
 @media (max-width: 480px) {
   .nav-inner { padding: 0 16px; }
   .nav-logo span { font-size: 0.85em; }
