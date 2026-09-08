@@ -86,5 +86,25 @@
       "Don't need to move your feet — body should stay relaxed"
     ],
     "notes": "Work on this — you should be able to eventually get power on the shot even in this small surface area. Don't worry if it's lighter at first, keep working!"
+  },
+  {
+    "id": "catch-and-release-shot",
+    "title": "Catch & Release Shot",
+    "category": "shooting",
+    "duration": "2:00",
+    "youtubeId": "",
+    "youtubeIds": ["AE3R8L5dVwE"],
+    "description": "Game-like catch and release shot. Train receiving a pass and getting the shot off quickly with your head up — simulates in-game timing.",
+    "whatYouNeed": "A passer (or a helper), a pile of pucks, a net",
+    "dos": [
+      "Receive the puck and get the shot off quickly",
+      "Pick a spot, hit it a few times before switching targets",
+      "Keep your head up — scan the net before the shot comes off",
+      "Lefties: go low blocker. Righties: go low glove",
+      "Build the habit of seeing what the goalie is giving you"
+    ],
+    "donts": [
+      "Don't look down for a long time — eyes should be scanning the net before you release"
+    ]
   }
 ]
