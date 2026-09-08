@@ -280,6 +280,49 @@ body::before {
 }
 .drill-play svg { width: 24px; height: 24px; fill: #050508; margin-left: 2px; }
 .drill-thumb:hover .drill-play { transform: scale(1.1); }
+.drill-thumbs-multi {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  overflow: hidden;
+}
+.drill-thumb-half {
+  aspect-ratio: 16/9;
+  position: relative;
+  background: rgba(255,255,255,0.04);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.drill-thumb-half img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.drill-play-sm {
+  width: 40px; height: 40px;
+  background: rgba(138,180,248,0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s;
+}
+.drill-play-sm svg { width: 18px; height: 18px; fill: #050508; margin-left: 2px; }
+.drill-thumb-half:hover .drill-play-sm { transform: scale(1.1); }
+.drill-badge {
+  position: absolute;
+  top: 6px; left: 6px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  font-size: 0.62em;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.03em;
+}
 .drill-duration {
   position: absolute;
   bottom: 8px; right: 8px;
@@ -467,12 +510,12 @@ body::before {
 <div class="gate" id="gate">
   <div class="gate-box">
     <div class="lock-icon">🔒</div>
-    <h1>DSA Drill Library</h1>
+    <h1>Garage Training Library</h1>
     <p>Enter the password from your purchase to access the full library of off-ice drills.</p>
     <input type="password" class="gate-input" id="passwordInput" placeholder="Enter password" autocomplete="off">
     <button class="gate-btn" id="unlockBtn">Unlock Library</button>
     <div class="gate-error" id="gateError">Incorrect password. Try again.</div>
-    <p class="gate-help">Purchased the DSA System?<br>Text Mike at <a href="tel:+19086753755">908-675-3755</a> for your password.</p>
+    <p class="gate-help">Purchased the Garage Training Library?<br>Text Mike at <a href="tel:+19086753755">908-675-3755</a> for your password.</p>
   </div>
 </div>
 
@@ -480,7 +523,7 @@ body::before {
 <div class="library" id="library">
 
   <div class="library-header">
-    <h1>DSA Drill Library</h1>
+    <h1>Garage Training Library</h1>
     <p>Off-ice drills for stickhandling, shooting, passing, and more</p>
     <p class="drill-count" id="drillCount"></p>
   </div>
@@ -496,7 +539,7 @@ body::before {
   <div class="footer" id="footer">
     <p style="margin-bottom:12px;">
       <a href="/" style="padding:6px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:100px;color:var(--text-secondary);text-decoration:none;font-size:0.78em;font-weight:600;margin:0 4px;">🎥 Analysis</a>
-      <a href="/drills/" style="padding:6px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:100px;color:var(--text-secondary);text-decoration:none;font-size:0.78em;font-weight:600;margin:0 4px;">📋 Drills</a>
+      <a href="/drills/" style="padding:6px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:100px;color:var(--text-secondary);text-decoration:none;font-size:0.78em;font-weight:600;margin:0 4px;">📋 Garage Library</a>
       <a href="/gear/" style="padding:6px 14px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:100px;color:var(--text-secondary);text-decoration:none;font-size:0.78em;font-weight:600;margin:0 4px;">🏒 Gear</a>
     </p>
     <p><a href="https://www.instagram.com/dsahockey/" target="_blank">@dsahockey</a> · <a href="../">dsahockey.com</a></p>
@@ -599,6 +642,17 @@ function getFilteredDrills() {
   return filtered;
 }
 
+// Get video IDs (supports both single youtubeId and array youtubeIds)
+function getVideoIds(drill) {
+  if (drill.youtubeIds && drill.youtubeIds.length > 0) {
+    return drill.youtubeIds.filter(id => id);
+  }
+  if (drill.youtubeId) {
+    return [drill.youtubeId];
+  }
+  return [];
+}
+
 function renderDrills(drillsToRender) {
   const grid = document.getElementById('drillGrid');
 
@@ -607,15 +661,38 @@ function renderDrills(drillsToRender) {
     return;
   }
 
-  grid.innerHTML = drillsToRender.map((drill, idx) => `
-    <div class="drill-card">
-      <div class="drill-thumb" data-idx="${idx}" onclick="openVideo('${drill.youtubeId}', this.dataset.idx)">
-        <img src="https://img.youtube.com/vi/${drill.youtubeId || 'placeholder'}/hqdefault.jpg" alt="${drill.title}" onerror="this.style.display='none'">
+  grid.innerHTML = drillsToRender.map((drill, idx) => {
+    const videoIds = getVideoIds(drill);
+    const multiAngle = videoIds.length > 1;
+
+    let thumbHtml;
+    if (multiAngle) {
+      // Two smaller thumbnails side by side
+      thumbHtml = `<div class="drill-thumbs-multi" data-idx="${idx}">
+        ${videoIds.map((vid, vi) => `
+          <div class="drill-thumb drill-thumb-half" onclick="openVideo('${vid}', ${idx})">
+            <img src="https://img.youtube.com/vi/${vid}/hqdefault.jpg" alt="${drill.title} — Angle ${vi+1}" onerror="this.style.display='none'">
+            <div class="drill-play drill-play-sm">
+              <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </div>
+            ${vi === 0 ? '<span class="drill-badge">2 Angles</span>' : ''}
+          </div>
+        `).join('')}
+      </div>`;
+    } else {
+      const vid = videoIds[0] || '';
+      thumbHtml = `<div class="drill-thumb" onclick="openVideo('${vid}', ${idx})">
+        <img src="https://img.youtube.com/vi/${vid || 'placeholder'}/hqdefault.jpg" alt="${drill.title}" onerror="this.style.display='none'">
         <div class="drill-play">
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
         <div class="drill-duration">${drill.duration}</div>
-      </div>
+      </div>`;
+    }
+
+    return `
+    <div class="drill-card">
+      ${thumbHtml}
       <div class="drill-info">
         <div class="drill-meta">
           <span class="drill-cat">${drill.category}</span>
@@ -635,7 +712,7 @@ function renderDrills(drillsToRender) {
         </div>
       </div>
     </div>
-  `).join('');
+  `}).join('');
 }
 
 function showToggle(btn, type, idx) {

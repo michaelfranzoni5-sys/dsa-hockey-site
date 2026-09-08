@@ -44,5 +44,47 @@
     "keyCues": ["Soft hands", "Eyes up", "Feel it, don't look at it"],
     "commonMistakes": ["Arm swinging too wide", "Puck bouncing off blade"],
     "relatedDrills": ["figure-eight-stickhandling", "through-cones-series"]
+  },
+  {
+    "id": "toe-drag-release",
+    "title": "Toe Drag Release",
+    "category": "shooting",
+    "duration": "2:30",
+    "youtubeId": "",
+    "youtubeIds": ["Go0O14KPvAo", "nQJcDbGzQ7s"],
+    "description": "Toe drag to release into a powerful shot. Build up to it.",
+    "whatYouNeed": "A cone (or puck, bucket, chair with a stick)",
+    "dos": [
+      "Hips rotate toward net, feet stay mostly planted",
+      "Start easy, feet not too close to the cone",
+      "Drag the puck with the toe, get a powerful pop off release",
+      "Elbow up, allow the sling push-pull motion",
+      "As you improve, move your feet closer to the cone — release the puck between your feet with weight on top of the puck for flex and power"
+    ],
+    "donts": [
+      "Don't step away from the cone before the release",
+      "Don't look down at the puck the whole time"
+    ]
+  },
+  {
+    "id": "explosive-pop-snap",
+    "title": "Explosive Pop Snap",
+    "category": "shooting",
+    "duration": "2:00",
+    "youtubeId": "",
+    "youtubeIds": ["-fvqTeCH-p4"],
+    "description": "Train a quicker, more explosive snap that transfers to every shot type.",
+    "whatYouNeed": "Two broken sticks, 1-3 feet gap between them",
+    "dos": [
+      "Focus solely on the snap",
+      "Keep your body relaxed",
+      "Pop the puck from the toe of the blade as quick as you can"
+    ],
+    "donts": [
+      "Don't drag the puck and turn it into a Bedard style shot",
+      "You should solely be focusing on the snap release",
+      "Don't need to move your feet — body should stay relaxed"
+    ],
+    "notes": "Work on this — you should be able to eventually get power on the shot even in this small surface area. Don't worry if it's lighter at first, keep working!"
   }
 ]
