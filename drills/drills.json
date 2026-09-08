@@ -106,5 +106,26 @@
     "donts": [
       "Don't look down for a long time — eyes should be scanning the net before you release"
     ]
+  },
+  {
+    "id": "high-slot-one-timer",
+    "title": "High Slot One-Timer",
+    "category": "shooting",
+    "duration": "2:00",
+    "youtubeId": "",
+    "youtubeIds": ["v3NSVUf8Ffg"],
+    "description": "High slot one-timer drill. Train reading the pass, picking your spot, and snapping it off quick from the slot — simulates the most dangerous scoring area on the ice.",
+    "whatYouNeed": "A passer (or helper), a pile of pucks, a net",
+    "dos": [
+      "Lefties: shoot top right (right side of net) — where the goalie is sliding toward",
+      "Righties: shoot top left (opposite corner)",
+      "On a slow pass, go across the grain",
+      "Hit five in one spot before moving to the next target",
+      "Snap it quick — high slot windows close fast"
+    ],
+    "donts": [
+      "Don't raise your stick above your head like a slap shot",
+      "This is a high slot one-timer, not a blue line bomb — keep the stick lower and snap through the puck"
+    ]
   }
 ]
