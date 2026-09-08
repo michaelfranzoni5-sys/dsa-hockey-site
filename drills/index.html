@@ -78,37 +78,89 @@ body::before {
   .nav-logo span { font-size: 0.85em; }
 }
 
-/* ═══ GATE SCREEN ═══ */
-.gate {
+/* ═══ PRE-GATE SALES SECTION ═══ */
+.pre-gate {
   position: relative; z-index: 1;
   min-height: 100vh;
   display: flex; align-items: center; justify-content: center;
   padding: 100px 24px 60px;
 }
-.gate-box {
+.pre-gate-box {
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: var(--radius);
   padding: 48px 40px;
-  max-width: 420px;
+  max-width: 480px;
   width: 100%;
   text-align: center;
 }
-@media (max-width: 480px) { .gate-box { padding: 36px 24px; } }
-.gate-box .lock-icon {
-  font-size: 2.4em;
-  margin-bottom: 16px;
+@media (max-width: 480px) { .pre-gate-box { padding: 36px 24px; } }
+.pre-gate-box .library-icon { font-size: 2.4em; margin-bottom: 12px; }
+.pre-gate-box h1 { font-size: 1.3em; font-weight: 800; margin-bottom: 8px; }
+.pre-gate-box .pre-subtitle { font-size: 0.85em; color: var(--text-secondary); margin-bottom: 24px; line-height: 1.5; }
+
+.pre-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 24px;
 }
-.gate-box h1 {
-  font-size: 1.3em;
-  font-weight: 800;
+.pre-stat {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  padding: 14px 10px;
+}
+.pre-stat .stat-number { font-size: 1.2em; font-weight: 800; color: var(--ice); }
+.pre-stat .stat-label { font-size: 0.72em; color: var(--text-dim); margin-top: 2px; }
+
+.pre-get-btn {
+  display: inline-block;
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, var(--ice), var(--ice-dark));
+  color: #050508;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 1.05em;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
   margin-bottom: 8px;
 }
-.gate-box p {
-  font-size: 0.85em;
-  color: var(--text-secondary);
-  margin-bottom: 28px;
+.pre-get-btn:hover { transform: translateY(-1px); box-shadow: 0 4px 20px rgba(138,180,248,0.3); }
+.pre-get-btn small { display: block; font-size: 0.72em; font-weight: 400; opacity: 0.8; margin-top: 4px; }
+
+.pre-divider {
+  margin: 28px 0;
+  display: flex; align-items: center; gap: 12px;
+  color: var(--text-dim);
+  font-size: 0.78em;
 }
+.pre-divider::before, .pre-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--card-border);
+}
+
+.pre-password-label {
+  font-size: 0.82em;
+  color: var(--text-secondary);
+  margin-bottom: 16px;
+}
+
+.pre-questions {
+  margin-top: 20px;
+  font-size: 0.76em;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.pre-questions a { color: var(--ice); text-decoration: none; }
+
+/* ═══ PASSWORD INPUT & BUTTON (shared) ═══ */
 .gate-input {
   width: 100%;
   padding: 14px 18px;
@@ -511,16 +563,46 @@ body::before {
   </div>
 </nav>
 
-<!-- GATE SCREEN -->
-<div class="gate" id="gate">
-  <div class="gate-box">
-    <div class="lock-icon">🔒</div>
+<!-- PRE-GATE SALES -->
+<div class="pre-gate" id="preGate">
+  <div class="pre-gate-box">
+    <div class="library-icon">📋</div>
     <h1>Garage Training Library</h1>
-    <p>Enter the password from your purchase to access the full library of off-ice drills.</p>
+    <p class="pre-subtitle">50+ coached off-ice drills with video demonstrations, form cues, and common mistakes — built to transfer garage reps to game performance.</p>
+
+    <div class="pre-stats">
+      <div class="pre-stat">
+        <div class="stat-number">6</div>
+        <div class="stat-label">Drills with Video</div>
+      </div>
+      <div class="pre-stat">
+        <div class="stat-number">5</div>
+        <div class="stat-label">Categories</div>
+      </div>
+      <div class="pre-stat">
+        <div class="stat-number">Lifetime</div>
+        <div class="stat-label">Access</div>
+      </div>
+      <div class="pre-stat">
+        <div class="stat-number">$99</div>
+        <div class="stat-label">One-Time</div>
+      </div>
+    </div>
+
+    <a href="https://paypal.me/MichaelFranzoni99/99" class="pre-get-btn">
+      Get Access — $99
+      <small>One payment. Lifetime access. New drills added regularly.</small>
+    </a>
+
+    <div class="pre-divider">already purchased?</div>
+
+    <p class="pre-password-label">Enter the password from your purchase to unlock the library.</p>
+
     <input type="password" class="gate-input" id="passwordInput" placeholder="Enter password" autocomplete="off">
     <button class="gate-btn" id="unlockBtn">Unlock Library</button>
     <div class="gate-error" id="gateError">Incorrect password. Try again.</div>
-    <p class="gate-help">Purchased the Garage Training Library?<br>Text Mike at <a href="tel:+19086753755">908-675-3755</a> for your password.</p>
+
+    <p class="pre-questions">Lost your password? Text Mike at <a href="tel:+19086753755">908-675-3755</a> or DM <a href="https://www.instagram.com/dsahockey/" target="_blank">@dsahockey</a>.</p>
   </div>
 </div>
 
@@ -580,22 +662,24 @@ function hasVideo(drill) {
 }
 
 // ── Gate ──
-document.getElementById('unlockBtn').addEventListener('click', unlock);
-document.getElementById('passwordInput').addEventListener('keydown', e => {
-  if (e.key === 'Enter') unlock();
-});
+const pwInput = document.getElementById('passwordInput');
+const unlockBtn = document.getElementById('unlockBtn');
+const gateError = document.getElementById('gateError');
 
-function unlock() {
-  const pw = document.getElementById('passwordInput').value;
+function tryUnlock(input, error) {
+  const pw = input.value;
   if (pw === CORRECT_PASSWORD) {
-    document.getElementById('gate').style.display = 'none';
+    document.getElementById('preGate').style.display = 'none';
     document.getElementById('library').classList.add('active');
     document.getElementById('footer').classList.add('active');
     renderDrills(getFilteredDrills());
   } else {
-    document.getElementById('gateError').style.display = 'block';
+    error.style.display = 'block';
   }
 }
+
+unlockBtn.addEventListener('click', () => tryUnlock(pwInput, gateError));
+pwInput.addEventListener('keydown', e => { if (e.key === 'Enter') tryUnlock(pwInput, gateError); });
 
 // ── Library initialisation ──
 let activeCategory = 'all';
