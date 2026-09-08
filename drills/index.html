@@ -591,7 +591,7 @@ function unlock() {
     document.getElementById('gate').style.display = 'none';
     document.getElementById('library').classList.add('active');
     document.getElementById('footer').classList.add('active');
-    renderDrills(drills);
+    renderDrills(getFilteredDrills());
   } else {
     document.getElementById('gateError').style.display = 'block';
   }
@@ -626,6 +626,8 @@ function initLibrary() {
       document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       activeCategory = cat;
+      searchQuery = '';
+      document.getElementById('searchInput').value = '';
       renderDrills(getFilteredDrills());
     });
     filterContainer.appendChild(btn);
@@ -653,7 +655,7 @@ function getFilteredDrills() {
     filtered = filtered.filter(d =>
       d.title.toLowerCase().includes(searchQuery) ||
       d.description.toLowerCase().includes(searchQuery) ||
-      d.keyCues.some(c => c.toLowerCase().includes(searchQuery)) ||
+      d.keyCues?.some(c => c.toLowerCase().includes(searchQuery)) ||
       d.category.toLowerCase().includes(searchQuery)
     );
   }
