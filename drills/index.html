@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>DSA Hockey Drill Library</title>
 <link rel="icon" href="../images/dsa-logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+* { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; }
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -14,7 +17,9 @@ body {
   color: #fff;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  touch-action: manipulation;
 }
 :root {
   --ice: #8ab4f8;
@@ -567,6 +572,13 @@ fetch('drills.json')
     initLibrary();
   });
 
+// ── Helpers ──
+function hasVideo(drill) {
+  if (drill.youtubeIds && drill.youtubeIds.length > 0) return drill.youtubeIds.some(id => id);
+  if (drill.youtubeId) return drill.youtubeId.length > 0;
+  return false;
+}
+
 // ── Gate ──
 document.getElementById('unlockBtn').addEventListener('click', unlock);
 document.getElementById('passwordInput').addEventListener('keydown', e => {
@@ -590,8 +602,11 @@ let activeCategory = 'all';
 let searchQuery = '';
 
 function initLibrary() {
+  // Only show drills that have videos
+  const available = drills.filter(d => hasVideo(d));
+
   // Build category filters
-  const cats = ['all', ...new Set(drills.map(d => d.category))];
+  const cats = ['all', ...new Set(available.map(d => d.category))];
   const filterContainer = document.getElementById('filters');
   const catLabels = {
     all: 'All',
@@ -622,12 +637,15 @@ function initLibrary() {
     renderDrills(getFilteredDrills());
   });
 
-  // Update count
-  document.getElementById('drillCount').textContent = `${drills.length} drills`;
+  // Update count — only count drills with video
+  document.getElementById('drillCount').textContent = `${available.length} drills`;
 }
 
+let availableDrills = [];
+
 function getFilteredDrills() {
-  let filtered = drills;
+  availableDrills = drills.filter(d => hasVideo(d));
+  let filtered = availableDrills;
   if (activeCategory !== 'all') {
     filtered = filtered.filter(d => d.category === activeCategory);
   }
@@ -701,10 +719,10 @@ function renderDrills(drillsToRender) {
         <p class="drill-desc">${drill.description}</p>
 
         <div class="drill-toggle">
-          <button class="toggle-btn" onclick="showToggle(this, 'dos', ${idx})">✅ Do's</button>
+          <button class="toggle-btn active-dos" onclick="showToggle(this, 'dos', ${idx})">✅ Do's</button>
           <button class="toggle-btn" onclick="showToggle(this, 'donts', ${idx})">❌ Don'ts</button>
         </div>
-        <div class="toggle-content dos-list" id="dos-${idx}">
+        <div class="toggle-content dos-list active" id="dos-${idx}">
           <ul>${drill.dos.map(d => `<li>${d}</li>`).join('')}</ul>
         </div>
         <div class="toggle-content donts-list" id="donts-${idx}">
