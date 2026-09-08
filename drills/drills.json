@@ -81,5 +81,45 @@
       "Don't raise your stick above your head like a slap shot",
       "This is a high slot one-timer, not a blue line bomb — keep the stick lower and snap through the puck"
     ]
+  },
+  {
+    "id": "finding-shooting-lanes",
+    "title": "Finding Shooting Lanes",
+    "category": "shooting",
+    "duration": "2:00",
+    "youtubeId": "",
+    "youtubeIds": ["eqoSzDpwQmA"],
+    "description": "Change the angle, find the lane. Use a Bedard-style release and forehand-backhand fakes to create space and open up scoring areas.",
+    "whatYouNeed": "A cone (or bucket/chair), a net, pucks",
+    "dos": [
+      "Let your body flow naturally — be involved in the fake before the shot",
+      "Be intentional about where you aim — shoot for practical scoring areas",
+      "Remember spots on the net where you've scored in games — aim for those areas"
+    ],
+    "donts": [
+      "Don't just step to the side and shoot — the Bedard pull needs to bring the puck toward your feet",
+      "Don't make the fake with just your stick — use your whole body"
+    ]
+  },
+  {
+    "id": "in-tight-finishing",
+    "title": "In Tight Finishing",
+    "category": "shooting",
+    "duration": "1:30",
+    "youtubeId": "",
+    "youtubeIds": ["N7OkJ2k5A-E"],
+    "description": "In tight finishing drill. Quick feet, soft hands, one-touch chip shots around the net — everything happens fast in tight.",
+    "whatYouNeed": "A net, pucks",
+    "dos": [
+      "Keep feet planted, facing the net",
+      "Quick dribble stickhandle with body movement on the fake",
+      "Focus on chipping the puck up high",
+      "Make it a one-touch chip shot — quick and soft"
+    ],
+    "donts": [
+      "Don't move your feet",
+      "Don't do a long wrist shot",
+      "Don't fully rotate your body and do a slow long backhander"
+    ]
   }
 ]
