@@ -775,7 +775,7 @@ function renderDrills(drillsToRender) {
       thumbHtml = `<div class="drill-thumbs-multi" data-idx="${idx}">
         ${videoIds.map((vid, vi) => `
           <div class="drill-thumb drill-thumb-half" onclick="openVideo('${vid}', ${idx})">
-            <img src="https://img.youtube.com/vi/${vid}/hqdefault.jpg" alt="${drill.title} — Angle ${vi+1}" onerror="this.style.display='none'">
+            <img src="https://img.youtube.com/vi/${vid}/maxresdefault.jpg" alt="${drill.title} — Angle ${vi+1}" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/${vid}/hqdefault.jpg'">
             <div class="drill-play drill-play-sm">
               <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
             </div>
@@ -786,7 +786,7 @@ function renderDrills(drillsToRender) {
     } else {
       const vid = videoIds[0] || '';
       thumbHtml = `<div class="drill-thumb" onclick="openVideo('${vid}', ${idx})">
-        <img src="https://img.youtube.com/vi/${vid || 'placeholder'}/hqdefault.jpg" alt="${drill.title}" onerror="this.style.display='none'">
+        <img src="https://img.youtube.com/vi/${vid || 'placeholder'}/maxresdefault.jpg" alt="${drill.title}" onerror="this.onerror=null;this.src='https://img.youtube.com/vi/${vid || 'placeholder'}/hqdefault.jpg'">
         <div class="drill-play">
           <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
         </div>
