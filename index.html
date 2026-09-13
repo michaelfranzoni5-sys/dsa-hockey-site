@@ -202,7 +202,6 @@ body::before {
 /* ═══ HERO ═══ */
 .hero {
   position: relative; z-index: 1;
-  text-align: center;
   padding: 140px 20px 80px;
   overflow: hidden;
 }
@@ -216,6 +215,46 @@ body::before {
   background: radial-gradient(ellipse, rgba(138,180,248,0.08) 0%, transparent 70%);
   pointer-events: none;
 }
+.hero-grid {
+  max-width: 1000px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+}
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-photo {
+  width: 100%;
+  max-width: 340px;
+  border-radius: 20px;
+  border: 2px solid rgba(138,180,248,0.12);
+  box-shadow: 0 0 60px rgba(138,180,248,0.08);
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 480px) { .hero-photo { max-width: 260px; } }
+.hero-logo-overlay {
+  position: absolute;
+  bottom: -8px; right: -8px;
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  border: 2px solid rgba(5,5,8,0.8);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+@media (max-width: 480px) { .hero-logo-overlay { width: 44px; height: 44px; bottom: -4px; right: 4px; } }
+.hero-content {
+  text-align: left;
+}
+@media (max-width: 768px) { .hero-content { text-align: center; } }
 .hero-badge {
   display: inline-flex; align-items: center; gap: 6px;
   background: var(--ice-glow);
@@ -230,16 +269,6 @@ body::before {
 .hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ice); animation: pulse 2s infinite; }
 @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
 
-.hero img.logo {
-  display: block;
-  width: 220px; height: 220px;
-  margin: 0 auto 12px;
-  border-radius: 20px;
-  border: 2px solid rgba(138,180,248,0.15);
-  box-shadow: 0 0 60px rgba(138,180,248,0.1);
-  object-fit: cover;
-}
-@media (max-width: 480px) { .hero img.logo { width: 160px; height: 160px; border-radius: 24px; } }
 .hero h1 {
   font-size: clamp(2.2em, 7vw, 3.2em);
   font-weight: 900;
@@ -256,10 +285,11 @@ body::before {
   color: var(--text-secondary);
   margin-bottom: 36px;
   max-width: 500px;
-  margin-left: auto;
+  margin-left: 0;
   margin-right: auto;
   line-height: 1.6;
 }
+@media (max-width: 768px) { .hero .tagline { margin-left: auto; margin-right: auto; } }
 .hero-cta {
   display: inline-flex; align-items: center; gap: 10px;
   background: linear-gradient(135deg, var(--ice), var(--ice-dark));
@@ -802,19 +832,26 @@ body::before {
 
 <!-- HERO -->
 <section class="hero">
-  <img src="images/dsa-logo.png" alt="DSA Hockey" class="logo">
-  <div class="hero-badge"><span class="dot"></span> 48-hour turnaround</div>
-  <h1>Your Shot,<br>Broken Down.</h1>
-  <p class="tagline">Private video analysis for off-ice hockey training. Send a clip. Get personalized feedback — drills built just for you, not a group.</p>
-  <div class="hero-quote">
-    <p>"I spent countless hours in the garage shooting pucks. That's where I really learned to shoot — just me, a net, and a bucket of pucks."</p>
-    <cite>— Brendan Gallagher — 13 seasons, Montreal Canadiens</cite>
+  <div class="hero-grid">
+    <div class="hero-visual">
+      <img src="images/mike-headshot.jpg" alt="Mike Franzoni — DSA Hockey Coach" class="hero-photo">
+      <img src="images/dsa-logo.png" alt="DSA Hockey" class="hero-logo-overlay">
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> 48-hour turnaround</div>
+      <h1>Your Shot,<br>Broken Down.</h1>
+      <p class="tagline">Private video analysis for off-ice hockey training. Send a clip. Get personalized feedback — drills built just for you, not a group.</p>
+      <div class="hero-quote">
+        <p>"I spent countless hours in the garage shooting pucks. That's where I really learned to shoot — just me, a net, and a bucket of pucks."</p>
+        <cite>— Brendan Gallagher — 13 seasons, Montreal Canadiens</cite>
+      </div>
+      <a href="#pricing" class="hero-cta">
+        Get Breakdown + Drills — $69
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"/></svg>
+      </a>
+      <p class="hero-sub">Also available: <strong>Shot Breakdown</strong> — <a href="#pricing" style="color:var(--ice);text-decoration:none;">$39</a> · <strong>Garage Training Library</strong> — <a href="#dsa-system" style="color:var(--ice);text-decoration:none;">50+ drills</a> for $99.</p>
+    </div>
   </div>
-  <a href="#pricing" class="hero-cta">
-    Get Breakdown + Drills — $69
-    <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"/></svg>
-  </a>
-<p class="hero-sub">Also available: <strong>Shot Breakdown</strong> — <a href="#pricing" style="color:var(--ice);text-decoration:none;">$39</a> · <strong>Garage Training Library</strong> — <a href="#dsa-system" style="color:var(--ice);text-decoration:none;">50+ drills</a> for $99.</p>
 </section>
 
 <!-- ANALYSIS SHOWCASE -->
