@@ -579,7 +579,7 @@ body::before {
       <p class="hero-coach">Built by a DSA Hockey coach who's done the work.</p>
     </div>
     <div class="hero-media">
-      <img src="../images/mike-gear-headshot.jpg" alt="Mike Franzoni — DSA Hockey Coach" class="hero-img">
+      <img src="../images/mike-headshot.jpg" alt="Mike Franzoni — DSA Hockey Coach" class="hero-img">
       <div class="hero-img-dots">
         <span></span><span></span><span></span><span></span>
       </div>
@@ -624,8 +624,9 @@ body::before {
 .dp-clip {
   width: 100%;
   display: block;
-  object-fit: cover;
-  aspect-ratio: 16/9;
+  max-height: 80vh;
+  object-fit: contain;
+  background: #050508;
 }
 .dp-tag {
   display: inline-block;
