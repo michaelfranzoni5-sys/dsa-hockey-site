@@ -563,6 +563,108 @@ body::before {
   </div>
 </nav>
 
+<!-- HERO SECTION -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-eyebrow">Garage Training Library</span>
+      <h1>27 coached off-ice drills.<br>Real <em>game-ready</em> reps.</h1>
+      <p class="hero-sub">Stickhandling, shooting, and edgework — with full video demos, form cues, and common mistakes. Built for players who train at home and compete on the ice.</p>
+      <div class="hero-meta">
+        <span><b>27</b> drills with video</span>
+        <span><b>✓</b> Do's &amp; Don'ts</span>
+        <span><b>∞</b> Lifetime access</span>
+      </div>
+      <a class="hero-cta" href="#preGate">View the Library →</a>
+      <p class="hero-coach">Built by a DSA Hockey coach who's done the work.</p>
+    </div>
+    <div class="hero-media">
+      <video autoplay muted loop playsinline poster="../images/dsa-logo.png">
+        <source src="../videos/dsa-hero-montage.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero {
+  position: relative; z-index: 1;
+  padding: 120px 24px 60px;
+  max-width: 1060px; margin: 0 auto;
+}
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 48px;
+  align-items: center;
+}
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ice);
+  margin-bottom: 14px;
+}
+.hero-text h1 {
+  font-size: clamp(30px, 4.5vw, 46px);
+  font-weight: 900; line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+}
+.hero-text h1 em { font-style: normal; color: var(--ice); }
+.hero-sub {
+  font-size: 15px; line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 22px;
+  max-width: 480px;
+}
+.hero-meta {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  margin-bottom: 24px;
+}
+.hero-meta span {
+  font-size: 13px; font-weight: 600;
+  color: var(--text-dim);
+}
+.hero-meta b { color: var(--ice); }
+.hero-cta {
+  display: inline-block;
+  padding: 16px 36px;
+  background: linear-gradient(135deg, var(--ice), var(--ice-dark));
+  color: #050508;
+  border-radius: 10px;
+  font-size: 16px; font-weight: 700;
+  font-family: inherit;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(138,180,248,0.3); }
+.hero-coach {
+  margin-top: 16px;
+  font-size: 12.5px; color: var(--text-dim);
+  font-weight: 500;
+}
+.hero-media {
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--card-border);
+  aspect-ratio: 16/9;
+  max-height: 400px;
+}
+.hero-media video {
+  width: 100%; height: 100%;
+  object-fit: cover;
+}
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 28px; }
+  .hero-media { order: -1; max-height: 300px; }
+  .hero-text { text-align: center; }
+  .hero-sub { margin: 0 auto 22px; }
+  .hero-meta { justify-content: center; }
+  .hero-coach { text-align: center; }
+}
+</style>
+
 <!-- PRE-GATE SALES -->
 <div class="pre-gate" id="preGate">
   <div class="pre-gate-box">
