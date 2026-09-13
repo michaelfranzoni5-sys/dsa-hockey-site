@@ -564,136 +564,65 @@ body::before {
 </nav>
 
 <!-- HERO SECTION -->
-<section class="hero">
-  <div class="hero-inner">
-    <div class="hero-text">
-      <span class="hero-eyebrow">Garage Training Library</span>
-      <h1>27 coached off-ice drills.<br>Real <em>game-ready</em> reps.</h1>
-      <p class="hero-sub">Stickhandling, shooting, and edgework — with full video demos, form cues, and common mistakes. Built for players who train at home and compete on the ice.</p>
-      <div class="hero-meta">
-        <span><b>27</b> drills with video</span>
-        <span><b>✓</b> Do's &amp; Don'ts</span>
-        <span><b>∞</b> Lifetime access</span>
-      </div>
-      <a class="hero-cta" href="#preGate">View the Library →</a>
-      <p class="hero-coach">Built by a DSA Hockey coach who's done the work.</p>
+<section class="hero-video">
+  <div class="hv-text">
+    <span class="hv-eyebrow">Garage Training Library</span>
+    <h1>27 coached off-ice drills.<br>Real <em>game-ready</em> reps.</h1>
+    <p class="hv-sub">Stickhandling, shooting, and edgework — with full video demos, form cues, and common mistakes. Built for players who train at home and compete on the ice.</p>
+    <div class="hv-meta">
+      <span><b>27</b> drills with video</span>
+      <span><b>✓</b> Do's &amp; Don'ts</span>
+      <span><b>∞</b> Lifetime access</span>
     </div>
-    <div class="hero-media">
-      <img src="../images/mike-headshot.jpg" alt="Mike Franzoni — DSA Hockey Coach" class="hero-img">
-      <div class="hero-img-dots">
-        <span></span><span></span><span></span><span></span>
-      </div>
-    </div>
+    <a class="hv-cta" href="#preGate">View the Library →</a>
+    <p class="hv-coach">Built by a DSA Hockey coach who's done the work.</p>
   </div>
-</section>
-
-<!-- DRILL SNEAK PREVIEW -->
-<section class="drill-preview">
-  <div class="dp-inner">
-    <div class="dp-video">
-      <video autoplay muted loop playsinline poster="../images/dsa-logo.png" class="dp-clip">
-        <source src="../videos/dsa-hero-montage.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="dp-text">
-      <span class="dp-tag">Quick Cuts</span>
-      <h3>See the drills in action</h3>
-      <p>Quick-hit clips of every drill type — stickhandling, shooting, edgework, passing. Shot from real training sessions in the garage. Every video includes form cues and common mistakes so you know exactly what to look for.</p>
-    </div>
+  <div class="hv-media">
+    <video autoplay muted loop playsinline poster="../images/dsa-logo.png" class="hv-clip">
+      <source src="../videos/dsa-hero-montage.mp4" type="video/mp4">
+    </video>
   </div>
 </section>
 
 <style>
-.drill-preview {
-  position: relative; z-index: 1;
-  padding: 0 24px 60px;
-  max-width: 1060px; margin: 0 auto;
-}
-.dp-inner {
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 40px;
-  align-items: center;
-}
-.dp-video {
-  border-radius: 16px;
-  overflow: hidden;
-  border: 1px solid var(--card-border);
-  background: var(--card);
-}
-.dp-clip {
-  width: 100%;
-  display: block;
-  max-height: 80vh;
-  object-fit: contain;
-  background: #050508;
-}
-.dp-tag {
-  display: inline-block;
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 0.2em; text-transform: uppercase;
-  color: var(--ice);
-  margin-bottom: 10px;
-}
-.dp-text h3 {
-  font-size: clamp(18px, 3vw, 24px);
-  font-weight: 800;
-  margin-bottom: 10px;
-  color: #fff;
-}
-.dp-text p {
-  font-size: 14px;
-  line-height: 1.7;
-  color: var(--text-secondary);
-}
-@media (max-width: 768px) {
-  .dp-inner { grid-template-columns: 1fr; gap: 20px; }
-  .dp-text { text-align: center; }
-}
-</style>
-
-<style>
-.hero {
+.hero-video {
   position: relative; z-index: 1;
   padding: 120px 24px 60px;
-  max-width: 1060px; margin: 0 auto;
+  max-width: 750px; margin: 0 auto;
+  text-align: center;
 }
-.hero-inner {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 48px;
-  align-items: center;
-}
-.hero-eyebrow {
+.hv-eyebrow {
   display: inline-block;
   font-size: 12px; font-weight: 700;
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--ice);
   margin-bottom: 14px;
 }
-.hero-text h1 {
-  font-size: clamp(30px, 4.5vw, 46px);
+.hero-video h1 {
+  font-size: clamp(30px, 4.5vw, 42px);
   font-weight: 900; line-height: 1.08;
   letter-spacing: -0.02em;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
-.hero-text h1 em { font-style: normal; color: var(--ice); }
-.hero-sub {
+.hero-video h1 em { font-style: normal; color: var(--ice); }
+.hv-sub {
   font-size: 15px; line-height: 1.65;
   color: var(--text-secondary);
-  margin-bottom: 22px;
-  max-width: 480px;
+  margin-bottom: 18px;
+  max-width: 520px;
+  margin-left: auto; margin-right: auto;
 }
-.hero-meta {
+.hv-meta {
   display: flex; gap: 16px; flex-wrap: wrap;
-  margin-bottom: 24px;
+  justify-content: center;
+  margin-bottom: 20px;
 }
-.hero-meta span {
+.hv-meta span {
   font-size: 13px; font-weight: 600;
   color: var(--text-dim);
 }
-.hero-meta b { color: var(--ice); }
-.hero-cta {
+.hv-meta b { color: var(--ice); }
+.hv-cta {
   display: inline-block;
   padding: 16px 36px;
   background: linear-gradient(135deg, var(--ice), var(--ice-dark));
@@ -704,51 +633,26 @@ body::before {
   text-decoration: none;
   transition: all 0.2s;
 }
-.hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(138,180,248,0.3); }
-.hero-coach {
-  margin-top: 16px;
+.hv-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(138,180,248,0.3); }
+.hv-coach {
+  margin-top: 14px;
   font-size: 12.5px; color: var(--text-dim);
   font-weight: 500;
 }
-.hero-media {
+.hv-media {
+  margin-top: 36px;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--card-border);
-  background: var(--card);
-  min-height: 320px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
+  background: #050508;
+  max-width: 480px;
+  margin-left: auto; margin-right: auto;
 }
-.hero-img {
+.hv-clip {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
   display: block;
-}
-.hero-img-dots {
-  position: absolute;
-  bottom: 12px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 6px;
-}
-.hero-img-dots span {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: rgba(255,255,255,0.35);
-  transition: background 0.2s;
-}
-.hero-img-dots span:first-child { background: rgba(255,255,255,0.7); }
-@media (max-width: 768px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 28px; }
-  .hero-media { order: -1; max-height: 340px; }
-  .hero-text { text-align: center; }
-  .hero-sub { margin: 0 auto 22px; }
-  .hero-meta { justify-content: center; }
-  .hero-coach { text-align: center; }
+  max-height: 80vh;
+  object-fit: contain;
 }
 </style>
 
