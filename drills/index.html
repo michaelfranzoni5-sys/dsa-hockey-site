@@ -565,6 +565,11 @@ body::before {
 
 <!-- HERO SECTION -->
 <section class="hero-video">
+  <div class="hv-media">
+    <video autoplay muted loop playsinline class="hv-clip">
+      <source src="../videos/dsa-hero-montage.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="hv-text">
     <span class="hv-eyebrow">Garage Training Library</span>
     <h1>27 coached off-ice drills.<br>Real <em>game-ready</em> reps.</h1>
@@ -577,17 +582,12 @@ body::before {
     <a class="hv-cta" href="#preGate">View the Library →</a>
     <p class="hv-coach">Built by a DSA Hockey coach who's done the work.</p>
   </div>
-  <div class="hv-media">
-    <video autoplay muted loop playsinline class="hv-clip">
-      <source src="../videos/dsa-hero-montage.mp4" type="video/mp4">
-    </video>
-  </div>
 </section>
 
 <style>
 .hero-video {
   position: relative; z-index: 1;
-  padding: 120px 24px 60px;
+  padding: 100px 24px 60px;
   max-width: 750px; margin: 0 auto;
   text-align: center;
 }
@@ -640,7 +640,6 @@ body::before {
   font-weight: 500;
 }
 .hv-media {
-  margin-top: 36px;
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--card-border);
