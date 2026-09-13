@@ -572,11 +572,11 @@ body::before {
 
     <div class="pre-stats">
       <div class="pre-stat">
-        <div class="stat-number">7</div>
+        <div class="stat-number">27</div>
         <div class="stat-label">Drills with Video</div>
       </div>
       <div class="pre-stat">
-        <div class="stat-number">5</div>
+        <div class="stat-number">3</div>
         <div class="stat-label">Categories</div>
       </div>
       <div class="pre-stat">
@@ -694,6 +694,7 @@ function initLibrary() {
   const filterContainer = document.getElementById('filters');
   const catLabels = {
     all: 'All',
+    drills: 'All Drills',
     stickhandling: 'Stickhandling',
     shooting: 'Shooting',
     passing: 'Passing',
@@ -837,7 +838,7 @@ function openVideo(youtubeId, idx) {
   if (!youtubeId) return;
   const overlay = document.getElementById('videoOverlay');
   const iframe = document.getElementById('videoIframe');
-  iframe.src = `https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0`;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&controls=1`;
   overlay.classList.add('active');
 }
 
