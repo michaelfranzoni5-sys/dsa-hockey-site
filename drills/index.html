@@ -931,7 +931,7 @@ function openVideo(youtubeId, idx) {
   if (!youtubeId) return;
   const overlay = document.getElementById('videoOverlay');
   const iframe = document.getElementById('videoIframe');
-  iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&controls=1`;
+  iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&controls=1&vq=hd1080`;
   overlay.classList.add('active');
 }
 
