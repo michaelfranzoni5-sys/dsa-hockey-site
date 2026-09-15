@@ -246,17 +246,27 @@
   },
   {
     "id": "stickhandling-drill-3",
-    "title": "Stickhandling Drill 3",
+    "title": "Top Hand Only Stickhandling",
     "category": "stickhandling",
     "duration": "",
     "youtubeId": "",
     "youtubeIds": [
       "kdzsYwzzq9M"
     ],
-    "description": "Stickhandling drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
+    "description": "Forearm strength and puck control drill using only your top hand. Builds the hand strength and blade feel needed for one-handed puck protection and quicker releases.",
+    "whatYouNeed": "A heavier puck (orange recommended), or a black puck for younger players",
+    "dos": [
+      "Keep the puck on the heel of the blade and cup it with each touch",
+      "Maintain a good hockey stance — don't let your posture slip just because you're using one hand",
+      "Start with 5 reps or until you feel the forearm burn, then switch to the other side",
+      "Push yourself — when the forearm gets tired, grab a black puck and go faster",
+      "Work the backhand side too — you need to handle the puck on every part of your body",
+      "Take a break, shake it out, then hit the next variation"
+    ],
+    "donts": [
+      "Don't use your bottom hand — this drill is strictly one-handed",
+      "Don't let the blade go flat — keep the puck on the heel at all times"
+    ]
   },
   {
     "id": "drill-5670",
