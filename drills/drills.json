@@ -1,191 +1,5 @@
 [
   {
-    "id": "toe-drag-release",
-    "title": "Toe Drag Release",
-    "category": "shooting",
-    "duration": "2:30",
-    "youtubeId": "",
-    "youtubeIds": [
-      "Go0O14KPvAo",
-      "nQJcDbGzQ7s"
-    ],
-    "description": "Toe drag to release into a powerful shot. Build up to it.",
-    "whatYouNeed": "A cone (or puck, bucket, chair with a stick)",
-    "dos": [
-      "Hips rotate toward net, feet stay mostly planted",
-      "Start easy, feet not too close to the cone",
-      "Drag the puck with the toe, get a powerful pop off release",
-      "Elbow up, allow the sling push-pull motion",
-      "As you improve, move your feet closer to the cone — release the puck between your feet with weight on top of the puck for flex and power"
-    ],
-    "donts": [
-      "Don't step away from the cone before the release",
-      "Don't look down at the puck the whole time"
-    ]
-  },
-  {
-    "id": "explosive-pop-snap",
-    "title": "Explosive Pop Snap",
-    "category": "shooting",
-    "duration": "2:00",
-    "youtubeId": "",
-    "youtubeIds": [
-      "-fvqTeCH-p4"
-    ],
-    "description": "Train a quicker, more explosive snap that transfers to every shot type.",
-    "whatYouNeed": "Two broken sticks, 1-3 feet gap between them",
-    "dos": [
-      "Focus solely on the snap",
-      "Keep your body relaxed",
-      "Pop the puck from the toe of the blade as quick as you can"
-    ],
-    "donts": [
-      "Don't drag the puck and turn it into a Bedard style shot",
-      "You should solely be focusing on the snap release",
-      "Don't need to move your feet — body should stay relaxed"
-    ],
-    "notes": "Work on this — you should be able to eventually get power on the shot even in this small surface area. Don't worry if it's lighter at first, keep working!"
-  },
-  {
-    "id": "catch-and-release-shot",
-    "title": "Catch & Release Shot",
-    "category": "shooting",
-    "duration": "2:00",
-    "youtubeId": "",
-    "youtubeIds": [
-      "AE3R8L5dVwE"
-    ],
-    "description": "Game-like catch and release shot. Train receiving a pass and getting the shot off quickly with your head up — simulates in-game timing.",
-    "whatYouNeed": "A passer (or a helper), a pile of pucks, a net",
-    "dos": [
-      "Receive the puck and get the shot off quickly",
-      "Pick a spot, hit it a few times before switching targets",
-      "Keep your head up — scan the net before the shot comes off",
-      "Lefties: go low blocker. Righties: go low glove",
-      "Build the habit of seeing what the goalie is giving you"
-    ],
-    "donts": [
-      "Don't look down for a long time — eyes should be scanning the net before you release"
-    ]
-  },
-  {
-    "id": "high-slot-one-timer",
-    "title": "High Slot One-Timer",
-    "category": "shooting",
-    "duration": "2:00",
-    "youtubeId": "",
-    "youtubeIds": [
-      "v3NSVUf8Ffg"
-    ],
-    "description": "High slot one-timer drill. Train reading the pass, picking your spot, and snapping it off quick from the slot — simulates the most dangerous scoring area on the ice.",
-    "whatYouNeed": "A passer (or helper), a pile of pucks, a net",
-    "dos": [
-      "Lefties: shoot top right (right side of net) — where the goalie is sliding toward",
-      "Righties: shoot top left (opposite corner)",
-      "On a slow pass, go across the grain",
-      "Hit five in one spot before moving to the next target",
-      "Snap it quick — high slot windows close fast"
-    ],
-    "donts": [
-      "Don't raise your stick above your head like a slap shot",
-      "This is a high slot one-timer, not a blue line bomb — keep the stick lower and snap through the puck"
-    ]
-  },
-  {
-    "id": "finding-shooting-lanes",
-    "title": "Finding Shooting Lanes",
-    "category": "shooting",
-    "duration": "2:00",
-    "youtubeId": "",
-    "youtubeIds": [
-      "eqoSzDpwQmA"
-    ],
-    "description": "Change the angle, find the lane. Use a Bedard-style release and forehand-backhand fakes to create space and open up scoring areas.",
-    "whatYouNeed": "A cone (or bucket/chair), a net, pucks",
-    "dos": [
-      "Let your body flow naturally — be involved in the fake before the shot",
-      "Be intentional about where you aim — shoot for practical scoring areas",
-      "Remember spots on the net where you've scored in games — aim for those areas"
-    ],
-    "donts": [
-      "Don't just step to the side and shoot — the Bedard pull needs to bring the puck toward your feet",
-      "Don't make the fake with just your stick — use your whole body"
-    ]
-  },
-  {
-    "id": "in-tight-finishing",
-    "title": "In Tight Finishing",
-    "category": "shooting",
-    "duration": "1:30",
-    "youtubeId": "",
-    "youtubeIds": [
-      "N7OkJ2k5A-E"
-    ],
-    "description": "In tight finishing drill. Quick feet, soft hands, one-touch chip shots around the net — everything happens fast in tight.",
-    "whatYouNeed": "A net, pucks",
-    "dos": [
-      "Keep feet planted, facing the net",
-      "Quick dribble stickhandle with body movement on the fake",
-      "Focus on chipping the puck up high",
-      "Make it a one-touch chip shot — quick and soft"
-    ],
-    "donts": [
-      "Don't move your feet",
-      "Don't do a long wrist shot",
-      "Don't fully rotate your body and do a slow long backhander"
-    ]
-  },
-  {
-    "id": "snapshots-on-passer",
-    "title": "Snapshots on Passer",
-    "category": "shooting",
-    "duration": "2:00",
-    "youtubeId": "",
-    "youtubeIds": [
-      "dFSv7sRXt74",
-      "760dK_LgMag"
-    ],
-    "description": "Snapshot off the top of the passer in a limited surface area. Trains you to generate power off the end of your release, building a quicker, more compact snap that's less predictable and highly effective in close quarters. The power transfers to every other shot — even when you're further out and drag the puck for a windup, you still snap and pop at the end.",
-    "whatYouNeed": "A passer (or helper), a net, pucks",
-    "dos": [
-      "Keep your top hand up high near your chest",
-      "Let your hand punch out slightly, then snap back quickly — that's where the pop and spin comes from",
-      "Keep your feet still, body relaxed",
-      "Watch the demonstration closely and mirror the mechanics"
-    ],
-    "donts": [
-      "Don't drag the puck into a toe drag release — this drill is pure snap, no angle change needed",
-      "Don't stare down at the puck the whole time",
-      "Don't pull your stick back and slap at the puck",
-      "Don't stress if you're not getting power at first — this takes time to master and pays off long-term for your release"
-    ],
-    "notes": "The second video is a slowed-down version without gloves so you can observe the hand mechanics more closely. Both videos show the same drill."
-  },
-  {
-    "id": "foundation-snap-shot",
-    "title": "Foundation Snap Shot",
-    "category": "shooting",
-    "duration": "2:00",
-    "youtubeId": "",
-    "youtubeIds": [
-      "zlt5WWdAD3A"
-    ],
-    "description": "The perfect drill for dialing in your snap shot and correcting form. If your mechanics are off, you won't be able to get power on this shot — the drill forces you to place the puck in the right position and take a compact, proper snap. Great for developing players learning to generate power and confidence in their release. The drill exaggerates the push-puck-away-then-pop technique that's essential to every snap shot.",
-    "whatYouNeed": "A net, pucks",
-    "dos": [
-      "Drag the puck to a spot where you can one-touch it",
-      "Let your hips and body rotate toward the net",
-      "Use a staggered stance — copy the footwork shown in the video",
-      "Focus specifically on being compact and efficient with every movement"
-    ],
-    "donts": [
-      "Don't try to overpower it — if your form is off, the shot won't work, so let the drill correct your mechanics",
-      "Don't reach for the puck — bring it into your body before releasing",
-      "Don't rush the push-pop sequence — it should be one fluid motion"
-    ],
-    "notes": "Kids and developing players benefit most from this. The push-puck-away technique gets exaggerated naturally, which is exactly what builds a proper snap shot foundation."
-  },
-  {
     "id": "stickhandling-drill-2",
     "title": "Around the World Stickhandling",
     "category": "stickhandling",
@@ -270,226 +84,554 @@
   },
   {
     "id": "drill-5670",
-    "title": "Drill 5670",
-    "category": "drills",
+    "title": "Toe Drag Progression",
+    "category": "stickhandling",
     "duration": "",
     "youtubeId": "",
     "youtubeIds": [
       "cpZAxTRkx3I"
     ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
+    "description": "Simple toe drag drill working through a line of pucks. Focus on keeping a loose bottom hand and dragging the puck with the toe, not just swiping at it.",
+    "whatYouNeed": "A line of pucks spaced a few feet apart",
+    "dos": [
+      "Keep your bottom hand loose — don't grip tight",
+      "Push the puck out wide with hands close together, then pull it in with the toe",
+      "Position your body completely to the right side of the pucks, not in the middle",
+      "Exaggerate the toe drag — really grab it with the toe and pull it in",
+      "Let your feet and hands move together through the line",
+      "It's okay to look at the puck — just never be so hunched over you're vulnerable"
+    ],
+    "donts": [
+      "Don't keep your feet centered between the pucks — stay to the side",
+      "Don't just swipe at the puck — actually drag it with the toe",
+      "Don't get caught in a vulnerable hunched position"
+    ]
   },
   {
     "id": "drill-8947",
-    "title": "Drill 8947",
-    "category": "drills",
+    "title": "Alternating Circles",
+    "category": "stickhandling",
     "duration": "",
     "youtubeId": "",
     "youtubeIds": [
       "MtFCxExa62c"
     ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
+    "description": "Alternating toe drag and circle pattern through a line of pucks. Toe drag around one puck, come through the middle, circle around the next — repeat.",
+    "whatYouNeed": "A line of pucks (5-10, adjust for your space)",
+    "dos": [
+      "Keep your feet wide and the pucks centered between them",
+      "Lead with a toe drag around the first puck",
+      "Come through the middle, then circle around the next puck",
+      "Alternate all the way down — drag, circle, drag, circle",
+      "Keep your chest up — it's okay to look at the pucks",
+      "Don't worry if you mess up, just keep going",
+      "Once you know the pattern, build speed"
+    ],
+    "donts": [
+      "Don't hunch over — stay in your athletic stance"
+    ]
   },
   {
     "id": "drill-8948",
-    "title": "Drill 8948",
-    "category": "drills",
+    "title": "Alternating Circles — Bottom Hand Slide",
+    "category": "stickhandling",
     "duration": "",
     "youtubeId": "",
     "youtubeIds": [
       "U89LbS0x_KA"
     ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
+    "description": "Same alternating circle pattern with emphasis on letting the bottom hand slide. Don't grip too tight — smoothness comes from the top hand leading and the bottom hand adjusting.",
+    "whatYouNeed": "A line of pucks (5-10 pucks)",
+    "dos": [
+      "Let your bottom hand slide — don't grip it tight",
+      "Use your top hand to lead the motion",
+      "Start with a toe drag around the first puck",
+      "Come through the middle and circle around the next puck",
+      "Do 6-8 reps — one rep is going down and back",
+      "Once you have the pattern, start building speed"
+    ],
+    "donts": [
+      "Don't squeeze the bottom hand — stiffness kills control",
+      "Don't hunch over when reaching for the far puck — stay tall and reach with your hands",
+      "In a game, a hunched position leaves you vulnerable to hits"
+    ]
+  },
+  {
+    "id": "drill-8949",
+    "title": "Reverse Alternating Circles",
+    "category": "stickhandling",
+    "duration": "",
+    "youtubeId": "",
+    "youtubeIds": [
+      "3-luWybB3KU"
+    ],
+    "description": "Opposite pattern of the alternating circles drill. Start with a circle on the puck closest to your feet, then a toe drag on the far puck — reverse the sequence.",
+    "whatYouNeed": "A line of pucks (5-10)",
+    "dos": [
+      "Start with a circle on the puck closest to your feet",
+      "Come through the middle and do a toe drag on the far puck",
+      "Alternate — circle, toe drag, pull through, and repeat",
+      "Keep your feet wide, pucks centered between them",
+      "Let that bottom hand move — the top hand does most of the work",
+      "Do 6-8 reps, 2-3 sets",
+      "Once comfortable, snap the toe drag and snap the circle"
+    ],
+    "donts": [
+      "Don't hunch over — stay in your stance"
+    ]
   },
   {
     "id": "drill-9205",
-    "title": "Drill 9205",
+    "title": "Head Up Stickhandling",
     "category": "stickhandling",
     "duration": "",
     "youtubeId": "",
     "youtubeIds": [
       "67ytw2tY1aw"
     ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
+    "description": "Build the habit of keeping your head up while stickhandling. Pick two targets in your garage and scan back and forth between them as you handle the puck.",
+    "whatYouNeed": "Two tape marks or objects across your garage",
+    "dos": [
+      "Pick two spots in your garage — one left, one right",
+      "Stickhandle while moving your head side to side between them",
+      "Keep your eyes moving as fast as possible from target to target",
+      "Challenge yourself by taking quick peeks behind you too",
+      "Train this at the end of your stickhandling session after complex drills"
+    ],
+    "donts": [
+      "Don't stare at the puck — the whole point of this drill is keeping your eyes up"
+    ]
   },
   {
     "id": "drill-9206",
-    "title": "Drill 9206",
+    "title": "One-Leg Balance Stickhandling",
     "category": "stickhandling",
     "duration": "",
     "youtubeId": "",
     "youtubeIds": [
       "9gewRisFlfk"
     ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
+    "description": "Balance and puck control drill on one leg. Hockey is played on one leg — train your stability and puck skills at the same time.",
+    "whatYouNeed": "A puck",
+    "dos": [
+      "Stand on one leg for 30 seconds, then switch to the other leg",
+      "Keep your chest up and eyes forward — don't fold over",
+      "Maintain a good hockey stance even on one leg",
+      "Scan your surroundings as you balance — challenge your stability",
+      "Once you're good at it, move the puck to different areas while balancing"
+    ],
+    "donts": [
+      "Don't let your chest fold over — stay tall",
+      "Don't stare down at the puck"
+    ]
   },
   {
     "id": "drill-9207",
-    "title": "Drill 9207",
+    "title": "One-Leg Squat Stickhandling",
     "category": "stickhandling",
     "duration": "",
     "youtubeId": "",
     "youtubeIds": [
       "kjTB2UDp2rI"
     ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
-  },
-  {
-    "id": "drill-9265",
-    "title": "Drill 9265",
-    "category": "drills",
-    "duration": "",
-    "youtubeId": "",
-    "youtubeIds": [
-      "c0f44GmsXCY"
+    "description": "Combine a one-leg squat with stickhandling. Builds leg strength, balance, and puck control all at once — hockey is played on one leg.",
+    "whatYouNeed": "A puck",
+    "dos": [
+      "Stand on one leg just like the balance drill, but add a squat",
+      "Keep your chest and eyes up — don't leave yourself vulnerable",
+      "Keep the puck on the heel and cup it each time",
+      "Do 5 squats on one leg, switch to the other leg for 5",
+      "Complete 2 full sets"
     ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
-  },
-  {
-    "id": "drill-9266",
-    "title": "Drill 9266",
-    "category": "drills",
-    "duration": "",
-    "youtubeId": "",
-    "youtubeIds": [
-      "6RwEJpiA8fg"
-    ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
-  },
-  {
-    "id": "drill-9267",
-    "title": "Drill 9267",
-    "category": "drills",
-    "duration": "",
-    "youtubeId": "",
-    "youtubeIds": [
-      "cSM21cY3z58"
-    ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
-  },
-  {
-    "id": "drill-9433",
-    "title": "Drill 9433",
-    "category": "drills",
-    "duration": "",
-    "youtubeId": "",
-    "youtubeIds": [
-      "Em1WJdQtBNk"
-    ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
-  },
-  {
-    "id": "drill-9593",
-    "title": "Drill 9593",
-    "category": "drills",
-    "duration": "",
-    "youtubeId": "",
-    "youtubeIds": [
-      "0-LsFwAiAjM"
-    ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
-  },
-  {
-    "id": "drill-9595",
-    "title": "Drill 9595",
-    "category": "drills",
-    "duration": "",
-    "youtubeId": "",
-    "youtubeIds": [
-      "vgiHyZRfJso"
-    ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
-  },
-  {
-    "id": "drill-9596",
-    "title": "Drill 9596",
-    "category": "drills",
-    "duration": "",
-    "youtubeId": "",
-    "youtubeIds": [
-      "DGN4TLbvNdk"
-    ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
-  },
-  {
-    "id": "drill-8949",
-    "title": "Drill 8949",
-    "category": "drills",
-    "duration": "",
-    "youtubeId": "",
-    "youtubeIds": [
-      "3-luWybB3KU"
-    ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
-  },
-  {
-    "id": "drill-9264",
-    "title": "Drill 9264",
-    "category": "drills",
-    "duration": "",
-    "youtubeId": "",
-    "youtubeIds": [
-      "3lJIxgc9Zk0"
-    ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
+    "donts": [
+      "Don't hunch over or look down",
+      "Don't rush the squat — controlled movement builds real strength"
+    ]
   },
   {
     "id": "drill-9430",
-    "title": "Drill 9430",
-    "category": "drills",
+    "title": "Through the Legs Stickhandling",
+    "category": "stickhandling",
     "duration": "",
     "youtubeId": "",
     "youtubeIds": [
       "u8mlnh9R7Sk"
     ],
-    "description": "Drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
+    "description": "Pull the puck behind you and through your legs. Builds comfort handling the puck in every position — expands on the around the world foundation.",
+    "whatYouNeed": "A puck",
+    "dos": [
+      "Start stationary — 2-3 sets of 10 reps with chest up and good stance",
+      "Pull the puck back behind you, keep it on the toe",
+      "Let the bottom hand slide through — that's what makes it smooth",
+      "It's okay to glance at the puck, especially when learning",
+      "Once comfortable, start walking with it — simulate game motion",
+      "Progress to receiving bad passes behind you and pulling through"
+    ],
+    "donts": [
+      "Don't grip too tight — let the bottom hand slide naturally",
+      "Don't keep your head locked down — one peek is enough, then eyes up"
+    ]
+  },
+  {
+    "id": "drill-9264",
+    "title": "Backhand Toe Drag",
+    "category": "stickhandling",
+    "duration": "",
+    "youtubeId": "",
+    "youtubeIds": [
+      "3lJIxgc9Zk0"
+    ],
+    "description": "Deke move dragging the puck from forehand to backhand using the backhand toe. A one-on-one move that also fakes like you're going to shoot.",
+    "whatYouNeed": "A puck",
+    "dos": [
+      "Start stationary — isolate the backhand toe drag movement",
+      "Push the puck forward and drag it back with the back of the toe",
+      "The puck should travel on a diagonal, not in an arc",
+      "Use your top hand to lead — the bottom hand should not dominate",
+      "Once comfortable stationary, add motion",
+      "Tape on your blade helps with this move"
+    ],
+    "donts": [
+      "Don't use the middle of the blade — the name says toe drag for a reason",
+      "Don't depend on your bottom hand — keep it loose",
+      "Don't swing the puck in an arc — it should glide forward on a diagonal"
+    ]
+  },
+  {
+    "id": "drill-9265",
+    "title": "Toe Drag & Soft Chip",
+    "category": "stickhandling",
+    "duration": "",
+    "youtubeId": "",
+    "youtubeIds": [
+      "c0f44GmsXCY"
+    ],
+    "description": "Toe drag the puck into your feet, then soft chip over a stick. Advanced drill — master the basic fundamentals before attempting this one.",
+    "whatYouNeed": "A broken stick (or any stick-like object about 2 feet long), pucks, a net",
+    "dos": [
+      "Start with a toe drag, bringing the puck toward your feet",
+      "Keep the puck in the middle of your feet as you drag it in",
+      "Keep your feet wide — maintain your base",
+      "Use your top hand to lead and let the bottom hand slide",
+      "Do 5 reps per set, 3 sets total",
+      "If you make a mistake, slow it down first, then speed up"
+    ],
+    "donts": [
+      "Don't try this before mastering basic stickhandling first",
+      "Don't stand too straight or narrow — you lose your base",
+      "Don't worry about mistakes — it's training, not a game. Keep pushing"
+    ],
+    "notes": "Mistakes are part of the process. Same as missing a shot in a game — next rep, next shot. Keep going."
+  },
+  {
+    "id": "drill-9266",
+    "title": "Backhand Wand",
+    "category": "stickhandling",
+    "duration": "",
+    "youtubeId": "",
+    "youtubeIds": [
+      "6RwEJpiA8fg"
+    ],
+    "description": "Backhand wand deke — tap the puck on the backhand, let it roll, wand around it, and pull it the other way. Great one-on-one move for defensemen rushing the ice.",
+    "whatYouNeed": "A puck",
+    "dos": [
+      "Start stationary — get comfortable with the wand motion before adding speed",
+      "Tap the puck on the backhand and let it slide in one direction",
+      "The wand should happen as the puck is sliding — don't wait too long",
+      "Incorporate your whole body — shoulders, head, eyes into the fake",
+      "After the wand, extend your hands wide and go the other way",
+      "Once comfortable stationary, add motion — skating into the move"
+    ],
+    "donts": [
+      "Don't wait too long — the wand should come right as the puck starts sliding, not after it's fully there",
+      "Don't just move your stick — use your whole body to sell the fake",
+      "Don't look awkward — if you're hesitating, slow it down and get the feel first"
+    ]
+  },
+  {
+    "id": "drill-9267",
+    "title": "Forehand Wand",
+    "category": "stickhandling",
+    "duration": "",
+    "youtubeId": "",
+    "youtubeIds": [
+      "cSM21cY3z58"
+    ],
+    "description": "Forehand version of the wand deke. Push the puck one way, sell the fake with your body, and wand it around to go the other way.",
+    "whatYouNeed": "A puck",
+    "dos": [
+      "Start stationary — 10-20 reps focusing on the wand motion",
+      "Push the puck as if going one way, shift your body the same direction",
+      "Wand around the puck and go the opposite way",
+      "Use your shoulders, head, and eyes — sell the fake",
+      "Once stationary feels smooth, add motion while traveling up the ice",
+      "Experiment with using this move on goalies too, not just players"
+    ],
+    "donts": [
+      "Don't do the wand too early or too late — time it as the puck slides",
+      "Don't just do a basic forehand-to-backhand move — the wand should be distinct",
+      "Don't slide the puck all the way before starting the move"
+    ]
+  },
+  {
+    "id": "foundation-snap-shot",
+    "title": "Foundation Snap Shot",
+    "category": "shooting",
+    "duration": "2:00",
+    "youtubeId": "",
+    "youtubeIds": [
+      "zlt5WWdAD3A"
+    ],
+    "description": "The perfect drill for dialing in your snap shot and correcting form. If your mechanics are off, you won't be able to get power on this shot — the drill forces you to place the puck in the right position and take a compact, proper snap. Great for developing players learning to generate power and confidence in their release. The drill exaggerates the push-puck-away-then-pop technique that's essential to every snap shot.",
+    "whatYouNeed": "A net, pucks",
+    "dos": [
+      "Drag the puck to a spot where you can one-touch it",
+      "Let your hips and body rotate toward the net",
+      "Use a staggered stance — copy the footwork shown in the video",
+      "Focus specifically on being compact and efficient with every movement"
+    ],
+    "donts": [
+      "Don't try to overpower it — if your form is off, the shot won't work, so let the drill correct your mechanics",
+      "Don't reach for the puck — bring it into your body before releasing",
+      "Don't rush the push-pop sequence — it should be one fluid motion"
+    ],
+    "notes": "Kids and developing players benefit most from this. The push-puck-away technique gets exaggerated naturally, which is exactly what builds a proper snap shot foundation."
+  },
+  {
+    "id": "explosive-pop-snap",
+    "title": "Explosive Pop Snap",
+    "category": "shooting",
+    "duration": "2:00",
+    "youtubeId": "",
+    "youtubeIds": [
+      "-fvqTeCH-p4"
+    ],
+    "description": "Train a quicker, more explosive snap that transfers to every shot type.",
+    "whatYouNeed": "Two broken sticks, 1-3 feet gap between them",
+    "dos": [
+      "Focus solely on the snap",
+      "Keep your body relaxed",
+      "Pop the puck from the toe of the blade as quick as you can"
+    ],
+    "donts": [
+      "Don't drag the puck and turn it into a Bedard style shot",
+      "You should solely be focusing on the snap release",
+      "Don't need to move your feet — body should stay relaxed"
+    ],
+    "notes": "Work on this — you should be able to eventually get power on the shot even in this small surface area. Don't worry if it's lighter at first, keep working!"
+  },
+  {
+    "id": "snapshots-on-passer",
+    "title": "Snapshots on Passer",
+    "category": "shooting",
+    "duration": "2:00",
+    "youtubeId": "",
+    "youtubeIds": [
+      "dFSv7sRXt74",
+      "760dK_LgMag"
+    ],
+    "description": "Snapshot off the top of the passer in a limited surface area. Trains you to generate power off the end of your release, building a quicker, more compact snap that's less predictable and highly effective in close quarters. The power transfers to every other shot — even when you're further out and drag the puck for a windup, you still snap and pop at the end.",
+    "whatYouNeed": "A passer (or helper), a net, pucks",
+    "dos": [
+      "Keep your top hand up high near your chest",
+      "Let your hand punch out slightly, then snap back quickly — that's where the pop and spin comes from",
+      "Keep your feet still, body relaxed",
+      "Watch the demonstration closely and mirror the mechanics"
+    ],
+    "donts": [
+      "Don't drag the puck into a toe drag release — this drill is pure snap, no angle change needed",
+      "Don't stare down at the puck the whole time",
+      "Don't pull your stick back and slap at the puck",
+      "Don't stress if you're not getting power at first — this takes time to master and pays off long-term for your release"
+    ],
+    "notes": "The second video is a slowed-down version without gloves so you can observe the hand mechanics more closely. Both videos show the same drill."
+  },
+  {
+    "id": "toe-drag-release",
+    "title": "Toe Drag Release",
+    "category": "shooting",
+    "duration": "2:30",
+    "youtubeId": "",
+    "youtubeIds": [
+      "Go0O14KPvAo",
+      "nQJcDbGzQ7s"
+    ],
+    "description": "Toe drag to release into a powerful shot. Build up to it.",
+    "whatYouNeed": "A cone (or puck, bucket, chair with a stick)",
+    "dos": [
+      "Hips rotate toward net, feet stay mostly planted",
+      "Start easy, feet not too close to the cone",
+      "Drag the puck with the toe, get a powerful pop off release",
+      "Elbow up, allow the sling push-pull motion",
+      "As you improve, move your feet closer to the cone — release the puck between your feet with weight on top of the puck for flex and power"
+    ],
+    "donts": [
+      "Don't step away from the cone before the release",
+      "Don't look down at the puck the whole time"
+    ]
+  },
+  {
+    "id": "finding-shooting-lanes",
+    "title": "Finding Shooting Lanes",
+    "category": "shooting",
+    "duration": "2:00",
+    "youtubeId": "",
+    "youtubeIds": [
+      "eqoSzDpwQmA"
+    ],
+    "description": "Change the angle, find the lane. Use a Bedard-style release and forehand-backhand fakes to create space and open up scoring areas.",
+    "whatYouNeed": "A cone (or bucket/chair), a net, pucks",
+    "dos": [
+      "Let your body flow naturally — be involved in the fake before the shot",
+      "Be intentional about where you aim — shoot for practical scoring areas",
+      "Remember spots on the net where you've scored in games — aim for those areas"
+    ],
+    "donts": [
+      "Don't just step to the side and shoot — the Bedard pull needs to bring the puck toward your feet",
+      "Don't make the fake with just your stick — use your whole body"
+    ]
+  },
+  {
+    "id": "catch-and-release-shot",
+    "title": "Catch & Release Shot",
+    "category": "shooting",
+    "duration": "2:00",
+    "youtubeId": "",
+    "youtubeIds": [
+      "AE3R8L5dVwE"
+    ],
+    "description": "Game-like catch and release shot. Train receiving a pass and getting the shot off quickly with your head up — simulates in-game timing.",
+    "whatYouNeed": "A passer (or a helper), a pile of pucks, a net",
+    "dos": [
+      "Receive the puck and get the shot off quickly",
+      "Pick a spot, hit it a few times before switching targets",
+      "Keep your head up — scan the net before the shot comes off",
+      "Lefties: go low blocker. Righties: go low glove",
+      "Build the habit of seeing what the goalie is giving you"
+    ],
+    "donts": [
+      "Don't look down for a long time — eyes should be scanning the net before you release"
+    ]
+  },
+  {
+    "id": "high-slot-one-timer",
+    "title": "High Slot One-Timer",
+    "category": "shooting",
+    "duration": "2:00",
+    "youtubeId": "",
+    "youtubeIds": [
+      "v3NSVUf8Ffg"
+    ],
+    "description": "High slot one-timer drill. Train reading the pass, picking your spot, and snapping it off quick from the slot — simulates the most dangerous scoring area on the ice.",
+    "whatYouNeed": "A passer (or helper), a pile of pucks, a net",
+    "dos": [
+      "Lefties: shoot top right (right side of net) — where the goalie is sliding toward",
+      "Righties: shoot top left (opposite corner)",
+      "On a slow pass, go across the grain",
+      "Hit five in one spot before moving to the next target",
+      "Snap it quick — high slot windows close fast"
+    ],
+    "donts": [
+      "Don't raise your stick above your head like a slap shot",
+      "This is a high slot one-timer, not a blue line bomb — keep the stick lower and snap through the puck"
+    ]
+  },
+  {
+    "id": "in-tight-finishing",
+    "title": "In Tight Finishing",
+    "category": "shooting",
+    "duration": "1:30",
+    "youtubeId": "",
+    "youtubeIds": [
+      "N7OkJ2k5A-E"
+    ],
+    "description": "In tight finishing drill. Quick feet, soft hands, one-touch chip shots around the net — everything happens fast in tight.",
+    "whatYouNeed": "A net, pucks",
+    "dos": [
+      "Keep feet planted, facing the net",
+      "Quick dribble stickhandle with body movement on the fake",
+      "Focus on chipping the puck up high",
+      "Make it a one-touch chip shot — quick and soft"
+    ],
+    "donts": [
+      "Don't move your feet",
+      "Don't do a long wrist shot",
+      "Don't fully rotate your body and do a slow long backhander"
+    ]
+  },
+  {
+    "id": "drill-9433",
+    "title": "Slide Under & Release",
+    "category": "shooting",
+    "duration": "",
+    "youtubeId": "",
+    "youtubeIds": [
+      "Em1WJdQtBNk"
+    ],
+    "description": "Slide the puck under a defender's stick and get a quick one-touch release off. Simulates the tight-space shot you need when a defenseman closes the gap on you.",
+    "whatYouNeed": "A stickhandler device, bucket with a stick, or a chair with a stick — something to slide under",
+    "dos": [
+      "Come in wide like you're attacking the defenseman",
+      "Slide the puck under the stick as the defender reaches/pokes",
+      "Get into position and snap a quick release",
+      "Choose your spot — short side, far side, over the pad",
+      "Practice getting shots off with the puck in different positions around your feet",
+      "Lefties: short side bar down is a great option. Over the pad too"
+    ],
+    "donts": [
+      "Don't try to go to the other side of the stick — the move is sliding under, not around",
+      "Don't wind up big — this is a quick release drill, not a slap shot"
+    ]
+  },
+  {
+    "id": "drill-9593",
+    "title": "One-Legged Chair Shots",
+    "category": "shooting",
+    "duration": "",
+    "youtubeId": "",
+    "youtubeIds": [
+      "0-LsFwAiAjM",
+      "vgiHyZRfJso"
+    ],
+    "description": "Practice your one-legged in-stride shot by putting your back foot on a chair. Hockey is played off one leg — this builds the strength and comfort to shoot off either leg in game situations.",
+    "whatYouNeed": "A sturdy chair, a net, pucks",
+    "dos": [
+      "Place your back foot on a chair, fully extend the shooting leg",
+      "Keep your head up looking at the net",
+      "Get your top arm out and elbow up — punch through the shot",
+      "Lefties: shooting off the left leg, right leg on the chair",
+      "Righties: shooting off the right leg, left leg on the chair",
+      "Do about 30 pucks — you should feel it in your glute",
+      "Even if you already know one-legged shots, this builds strength"
+    ],
+    "donts": [
+      "Don't stand too close to the chair — extend out like you would in a game",
+      "Don't drop your head — keep your eyes on the target",
+      "Don't rush into this before mastering the basic snap shot"
+    ]
+  },
+  {
+    "id": "drill-9596",
+    "title": "One-Legged Shot In Stride",
+    "category": "shooting",
+    "duration": "",
+    "youtubeId": "",
+    "youtubeIds": [
+      "DGN4TLbvNdk"
+    ],
+    "description": "Learn to take a one-legged shot in motion. Start with a step-over landing on your shooting leg, then add the puck — simulates receiving a pass and shooting off one leg in a game.",
+    "whatYouNeed": "A broken stick (optional), a net, pucks",
+    "dos": [
+      "Start with right foot in front of left (lefties) — take a step and land on your left leg",
+      "Do this 10 times without the puck — get used to the weight transfer",
+      "Add your stick and body — look at the net as you land",
+      "Once the transfer feels natural, add the puck — snap it as you land",
+      "Righties: left foot in front of right, land on right leg",
+      "If you already know one-legged shots, practice from different areas of your garage to simulate game spots"
+    ],
+    "donts": [
+      "Don't try this before you're comfortable with the stationary chair shot first",
+      "Don't overcomplicate it — the motion is just a step and a land"
+    ]
   }
 ]
