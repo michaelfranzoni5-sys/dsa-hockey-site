@@ -945,23 +945,24 @@ function onYouTubeIframeAPIReady() {
       vq: 'hd1080'
     },
     events: {
-      'onReady': () => { ytReady = true; },
+      'onReady': () => {
+        ytReady = true;
+        ytPlayer.setPlaybackQuality('hd1080');
+      },
       'onStateChange': onPlayerStateChange
     }
   });
 }
 
 function onPlayerStateChange(event) {
-  // When video starts playing (state 1), request 1080p
   if (event.data === YT.PlayerState.PLAYING) {
-    event.target.setPlaybackQuality('hd1080');
-    // Also keep trying for a few seconds in case quality isn't set
+    // Aggressive 1080p — call every 500ms for first 10 seconds
     let attempts = 0;
-    const interval = setInterval(() => {
+    const forceHd = setInterval(() => {
       attempts++;
-      if (attempts > 10) { clearInterval(interval); return; }
       event.target.setPlaybackQuality('hd1080');
-    }, 1000);
+      if (attempts >= 20) clearInterval(forceHd);
+    }, 500);
   }
 }
 
@@ -970,7 +971,9 @@ function openVideo(youtubeId, idx) {
   const overlay = document.getElementById('videoOverlay');
   overlay.classList.add('active');
   if (ytReady && ytPlayer) {
-    ytPlayer.loadVideoById(youtubeId, 0, 'hd1080');
+    ytPlayer.cueVideoById(youtubeId, 0, 'hd1080');
+    ytPlayer.setPlaybackQuality('hd1080');
+    ytPlayer.playVideo();
   }
 }
 
