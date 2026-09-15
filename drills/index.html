@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<script src="https://www.youtube.com/iframe_api"></script>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; }
@@ -439,13 +440,14 @@ body::before {
 .video-container {
   position: relative;
   width: 100%;
-  max-width: 800px;
+  max-width: 900px;
   aspect-ratio: 16/9;
   background: #000;
   border-radius: var(--radius);
   overflow: hidden;
 }
-.video-container iframe {
+.video-container iframe,
+.video-container #youtubePlayer {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
@@ -730,7 +732,7 @@ body::before {
 <div class="video-overlay" id="videoOverlay">
   <div class="video-container">
     <button class="video-close" id="videoClose">✕</button>
-    <iframe id="videoIframe" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+    <div id="youtubePlayer"></div>
   </div>
 </div>
 
@@ -926,13 +928,50 @@ function showToggle(btn, type, idx) {
   document.getElementById(`${type}-${idx}`).classList.add('active');
 }
 
-// ── Video overlay ──
+// ── Video overlay (YouTube IFrame API) ──
+let ytPlayer = null;
+let ytReady = false;
+
+function onYouTubeIframeAPIReady() {
+  ytPlayer = new YT.Player('youtubePlayer', {
+    height: '100%',
+    width: '100%',
+    playerVars: {
+      autoplay: 1,
+      rel: 0,
+      modestbranding: 1,
+      playsinline: 1,
+      controls: 1,
+      vq: 'hd1080'
+    },
+    events: {
+      'onReady': () => { ytReady = true; },
+      'onStateChange': onPlayerStateChange
+    }
+  });
+}
+
+function onPlayerStateChange(event) {
+  // When video starts playing (state 1), request 1080p
+  if (event.data === YT.PlayerState.PLAYING) {
+    event.target.setPlaybackQuality('hd1080');
+    // Also keep trying for a few seconds in case quality isn't set
+    let attempts = 0;
+    const interval = setInterval(() => {
+      attempts++;
+      if (attempts > 10) { clearInterval(interval); return; }
+      event.target.setPlaybackQuality('hd1080');
+    }, 1000);
+  }
+}
+
 function openVideo(youtubeId, idx) {
   if (!youtubeId) return;
   const overlay = document.getElementById('videoOverlay');
-  const iframe = document.getElementById('videoIframe');
-  iframe.src = `https://www.youtube-nocookie.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1&playsinline=1&controls=1&vq=hd1080`;
   overlay.classList.add('active');
+  if (ytReady && ytPlayer) {
+    ytPlayer.loadVideoById(youtubeId, 0, 'hd1080');
+  }
 }
 
 document.getElementById('videoClose').addEventListener('click', closeVideo);
@@ -942,7 +981,9 @@ document.getElementById('videoOverlay').addEventListener('click', e => {
 
 function closeVideo() {
   document.getElementById('videoOverlay').classList.remove('active');
-  document.getElementById('videoIframe').src = '';
+  if (ytReady && ytPlayer) {
+    ytPlayer.stopVideo();
+  }
 }
 </script>
 </body>
