@@ -187,17 +187,27 @@
   },
   {
     "id": "stickhandling-drill-1",
-    "title": "Stickhandling Drill 1",
+    "title": "Quick Hands Warm Up",
     "category": "stickhandling",
     "duration": "",
     "youtubeId": "",
     "youtubeIds": [
       "SCXyE2KA-Cc"
     ],
-    "description": "Stickhandling drill from the DSA Hockey Garage Training Library.",
-    "whatYouNeed": "",
-    "dos": [],
-    "donts": []
+    "description": "Warm up your hands and build rhythm. Alternating side-to-side puck control through a stickhandling device with a focus on cupping the puck and keeping your eyes up.",
+    "whatYouNeed": "A stickhandling device (or a row of pucks/cones spaced 6-8 inches apart)",
+    "dos": [
+      "Keep the stickhandling device centered between your feet",
+      "Get in a good hockey stance — feet wide, chest up, not too tall and not hunched over",
+      "Focus on cupping the puck with each touch — dribble twice, cup it, keep it on the heel of the blade",
+      "Slide the puck under the device and repeat the same motion on the other side",
+      "Once you find the rhythm, pick your head up and keep it up",
+      "Speed it up gradually while maintaining control"
+    ],
+    "donts": [
+      "Don't stand too tall or hunch over — stay in your hockey stance",
+      "Don't stare at the puck — train your hands to feel it while your eyes scan"
+    ]
   },
   {
     "id": "stickhandling-drill-2",
