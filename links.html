@@ -52,27 +52,64 @@ body::before {
   z-index: 0;
 }
 
-/* ═══ MONTAGE ═══ */
-.montage-wrap {
-  width: 100%;
-  height: 300px;
+/* ═══ HERO ═══ */
+.hero {
+  position: relative; z-index: 1;
+  padding: 76px 24px 40px;
+  max-width: 750px; margin: 0 auto;
+  text-align: center;
+}
+.hero-video-wrap {
+  border-radius: 16px;
   overflow: hidden;
-  background: #000;
-  position: relative;
-  z-index: 1;
+  border: 1px solid var(--card-border);
+  background: #050508;
+  max-width: 100%;
+  margin: 0 auto 28px;
 }
-.montage-wrap video {
+.hero-video-wrap video {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  display: block;
+  max-height: 85vh;
+  object-fit: contain;
 }
-@media (max-width: 480px) { .montage-wrap { height: 220px; } }
+.hero-eyebrow {
+  display: inline-block;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ice);
+  margin-bottom: 14px;
+}
+.hero h1 {
+  font-size: clamp(30px, 4.5vw, 42px);
+  font-weight: 900; line-height: 1.08;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.hero h1 span { color: var(--ice); }
+.hero-sub {
+  font-size: 15px; line-height: 1.65;
+  color: var(--text-secondary);
+  margin-bottom: 18px;
+  max-width: 520px;
+  margin-left: auto; margin-right: auto;
+}
+.hero-meta {
+  display: flex; gap: 16px; flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 0;
+}
+.hero-meta span {
+  font-size: 13px; font-weight: 600;
+  color: var(--text-dim);
+}
+.hero-meta b { color: var(--ice); }
 
 /* ═══ CONTENT ═══ */
 .content {
   max-width: 640px;
   margin: 0 auto;
-  padding: 32px 20px 60px;
+  padding: 0 20px 60px;
   position: relative;
   z-index: 1;
   display: flex;
@@ -80,22 +117,18 @@ body::before {
   gap: 24px;
 }
 
-/* ═══ INTRO ═══ */
-.intro { text-align: center; }
-.intro h1 {
-  font-size: 1.4em;
-  font-weight: 900;
-  margin-bottom: 10px;
-  color: #fff;
-  letter-spacing: -0.02em;
+/* ═══ CREDIBILITY ═══ */
+.credibility {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 24px 22px;
+  text-align: center;
 }
-.intro h1 span { color: var(--ice); }
-.intro p {
-  font-size: 0.92em;
+.credibility p {
+  font-size: 0.9em;
   color: var(--text-secondary);
   line-height: 1.7;
-  max-width: 520px;
-  margin: 0 auto;
 }
 
 /* ═══ BUTTONS ═══ */
@@ -123,16 +156,6 @@ body::before {
   background: linear-gradient(135deg, #e3b341, #d29922);
   transform: translateY(-2px);
   box-shadow: 0 6px 24px rgba(210, 153, 34, 0.35);
-}
-.btn-secondary {
-  background: var(--card);
-  border-color: var(--card-border);
-  color: var(--text-secondary);
-}
-.btn-secondary:hover {
-  border-color: var(--ice);
-  color: #fff;
-  transform: translateY(-2px);
 }
 .btn small {
   font-size: 0.78rem;
@@ -197,7 +220,7 @@ body::before {
   padding: 36px 24px;
   text-align: center;
 }
-.gate-section .library-icon { font-size: 2.2em; margin-bottom: 8px; }
+.gate-section .gate-icon { font-size: 2.2em; margin-bottom: 8px; }
 .gate-section h3 {
   font-size: 1.05em;
   font-weight: 700;
@@ -262,7 +285,7 @@ body::before {
   font-size: 0.85em;
   color: var(--text-secondary);
 }
-.library-header .drill-count {
+.lib-count {
   font-size: 0.78em;
   color: var(--text-dim);
   margin-top: 4px;
@@ -439,24 +462,22 @@ body::before {
   text-align: center;
   font-size: 0.78em;
   color: var(--text-dim);
-  padding: 8px 0;
+  padding: 8px 0 0;
 }
 .footer a { color: var(--text-dim); text-decoration: none; font-weight: 600; }
 .footer a:hover { color: var(--ice); }
-
-/* ═══ EMPTY STATE ═══ */
-.empty-state { text-align: center; padding: 40px; grid-column: 1 / -1; }
-.empty-state p { color: var(--text-dim); font-size: 0.88em; }
-
-/* ═══ LIBRARY FOOTER ═══ */
-.lib-footer {
-  text-align: center;
-  padding-top: 32px;
+.footer .footer-links {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
 }
-.lib-footer a {
-  display: inline-block;
+.footer .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
   padding: 8px 18px;
-  margin: 0 4px;
   background: var(--card);
   border: 1px solid var(--card-border);
   border-radius: 100px;
@@ -466,32 +487,35 @@ body::before {
   font-weight: 600;
   transition: all 0.2s;
 }
-.lib-footer a:hover { border-color: var(--ice); color: #fff; }
+.footer .footer-links a:hover { border-color: var(--ice); color: #fff; }
+
+/* ═══ EMPTY STATE ═══ */
+.empty-state { text-align: center; padding: 40px; grid-column: 1 / -1; }
+.empty-state p { color: var(--text-dim); font-size: 0.88em; }
 </style>
 </head>
 <body>
 
-  <!-- MONTAGE -->
-  <div class="montage-wrap">
-    <video src="videos/dsa-hero-montage.mp4" autoplay loop muted playsinline></video>
-  </div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-video-wrap">
+      <video src="videos/dsa-hero-montage.mp4" autoplay loop muted playsinline></video>
+    </div>
+    <span class="hero-eyebrow">Garage/Home Training Library</span>
+    <h1>Coached off-ice drills — <span>adding new ones weekly</span></h1>
+    <p class="hero-sub">Stickhandling and shooting drills with full video demos, form cues, and common mistakes. Built by a coach with 5 years of experience helping players transfer garage reps to game performance.</p>
+    <div class="hero-meta">
+      <span><b>26</b> drills — growing weekly</span>
+      <span><b>✓</b> Do's &amp; Don'ts</span>
+      <span><b>∞</b> Lifetime access</span>
+    </div>
+  </section>
 
   <div class="content">
 
-    <!-- INTRO -->
-    <div class="intro">
-      <h1>DSA <span>Hockey</span></h1>
+    <!-- CREDIBILITY -->
+    <div class="credibility">
       <p>These aren't generic Instagram drills. I developed every one of them coaching real players — movements I've seen build confidence, put pucks in the net, and transfer straight to game speed.</p>
-    </div>
-
-    <!-- PURCHASE -->
-    <a href="https://paypal.me/MichaelFranzoni99/99" class="btn btn-gold">
-      📋 Garage/Home Training Library — $99
-      <small>26 coached drills with video + form cues. Lifetime access + updates.</small>
-    </a>
-
-    <div class="password-note">
-      After paying, text <strong>908-675-3755</strong> — I'll send the password. Then enter it below to unlock the library.
     </div>
 
     <!-- TESTIMONIALS -->
@@ -508,18 +532,22 @@ body::before {
       </div>
     </div>
 
-    <!-- GEAR -->
-    <a href="https://dsahockey.com/gear/" class="btn btn-secondary">
-      🏒 Gear I Use
-      <small>Training aids, equipment &amp; accessories I recommend</small>
+    <!-- PURCHASE -->
+    <a href="https://paypal.me/MichaelFranzoni99/99" class="btn btn-gold">
+      📋 Get the Library — $99
+      <small>26 coached drills with video + form cues. Lifetime access + updates.</small>
     </a>
+
+    <div class="password-note">
+      After paying, text <strong>908-675-3755</strong> — I'll send the password. Then enter it below to unlock the library.
+    </div>
 
     <!-- DIVIDER -->
     <div class="divider">already purchased?</div>
 
     <!-- PASSWORD GATE -->
     <div class="gate-section" id="preGate">
-      <div class="library-icon">🔓</div>
+      <div class="gate-icon">🔓</div>
       <h3>Unlock the Library</h3>
       <p class="gate-sub">Enter the password you received after purchase.</p>
       <input type="password" class="gate-input" id="passwordInput" placeholder="Enter password" autocomplete="off">
@@ -530,29 +558,26 @@ body::before {
 
     <!-- LIBRARY -->
     <div class="library" id="library">
-
       <div class="library-header">
         <h1>Garage/Home Training Library</h1>
         <p>Stickhandling &amp; shooting drills</p>
-        <p class="drill-count" id="drillCount"></p>
+        <p class="lib-count" id="drillCount"></p>
       </div>
-
       <div class="filters" id="filters"></div>
-
       <div class="search-wrap">
         <input type="text" class="search-input" id="searchInput" placeholder="Search drills...">
       </div>
-
       <div class="drill-grid" id="drillGrid"></div>
-
-      <div class="lib-footer">
-        <a href="/gear/">🏒 Gear</a>
-        <a href="https://www.instagram.com/dsahockey/" target="_blank">📸 @dsahockey</a>
-      </div>
-
     </div>
 
-    <p class="footer"><a href="/">dsahockey.com</a> · Brielle, NJ</p>
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="footer-links">
+        <a href="/gear/">🏒 Gear I Use</a>
+        <a href="https://www.instagram.com/dsahockey/" target="_blank">📸 @dsahockey</a>
+      </div>
+      <p><a href="/">dsahockey.com</a> · Brielle, NJ</p>
+    </div>
 
   </div>
 
