@@ -118,18 +118,29 @@ body::before {
   gap: 24px;
 }
 
-/* ═══ CREDIBILITY ═══ */
-.credibility {
-  background: var(--card);
-  border: 1px solid var(--card-border);
+/* ═══ COACH NOTE ═══ */
+.coach-note {
+  background: linear-gradient(135deg, rgba(138, 180, 248, 0.06), rgba(91, 150, 224, 0.04));
+  border: 1px solid rgba(138, 180, 248, 0.12);
   border-radius: var(--radius);
   padding: 24px 22px;
-  text-align: center;
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
 }
-.credibility p {
+.coach-note .coach-icon {
+  font-size: 1.6em;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.coach-note p {
   font-size: 0.9em;
   color: var(--text-secondary);
   line-height: 1.7;
+  margin: 0;
+}
+.coach-note strong {
+  color: var(--text);
 }
 
 /* ═══ BUTTONS ═══ */
@@ -518,9 +529,10 @@ body::before {
 
   <div class="content">
 
-    <!-- CREDIBILITY -->
-    <div class="credibility">
-      <p>These aren't generic Instagram drills. I developed every one of them coaching real players — movements I've seen build confidence, put pucks in the net, and transfer straight to game speed.</p>
+    <!-- COACH NOTE -->
+    <div class="coach-note">
+      <div class="coach-icon">🏒</div>
+      <p><strong>These aren't generic Instagram drills.</strong> I developed every one of them coaching real players — movements I've seen build confidence, put pucks in the net, and transfer straight to game speed.</p>
     </div>
 
     <!-- TESTIMONIALS -->
@@ -538,10 +550,14 @@ body::before {
     </div>
 
     <!-- PURCHASE -->
-    <a href="https://paypal.me/MichaelFranzoni99/99" class="btn btn-gold">
-      📋 Get the Library — $99
-      <small>26 coached drills with video + form cues. Lifetime access + updates.</small>
-    </a>
+    <div style="display:flex;flex-direction:column;gap:6px;">
+      <div class="divider" style="margin:0;"><span style="background:#050508;padding:0 12px;font-size:0.78em;color:var(--text-dim);font-weight:700;letter-spacing:0.03em;">⬇  PURCHASE  ⬇</span></div>
+      <a href="https://paypal.me/MichaelFranzoni99/99" class="btn btn-gold" style="padding:22px 24px;">
+        <span style="font-size:1.2em;">Tap to Buy — $99</span>
+        <small style="margin-top:8px;">26 coached drills with video + form cues · Lifetime access + updates</small>
+      </a>
+      <p style="font-size:0.76em;color:var(--text-dim);text-align:center;">🔒 Secure payment via PayPal</p>
+    </div>
 
     <div class="password-note">
       After paying, text <strong>908-675-3755</strong> — I'll send the password. Then enter it below to unlock the library.
