@@ -53,57 +53,58 @@ body::before {
 }
 
 /* ═══ HERO ═══ */
-.hero {
+.hero-video {
   position: relative; z-index: 1;
   padding: 76px 24px 40px;
   max-width: 750px; margin: 0 auto;
   text-align: center;
 }
-.hero-video-wrap {
+.hv-media {
   border-radius: 16px;
   overflow: hidden;
   border: 1px solid var(--card-border);
   background: #050508;
   max-width: 100%;
-  margin: 0 auto 28px;
+  margin-left: auto; margin-right: auto;
+  margin-bottom: 28px;
 }
-.hero-video-wrap video {
+.hv-clip {
   width: 100%;
   display: block;
   max-height: 85vh;
   object-fit: contain;
 }
-.hero-eyebrow {
+.hv-eyebrow {
   display: inline-block;
   font-size: 12px; font-weight: 700;
   letter-spacing: 0.22em; text-transform: uppercase;
   color: var(--ice);
   margin-bottom: 14px;
 }
-.hero h1 {
+.hero-video h1 {
   font-size: clamp(30px, 4.5vw, 42px);
   font-weight: 900; line-height: 1.08;
   letter-spacing: -0.02em;
   margin-bottom: 12px;
 }
-.hero h1 span { color: var(--ice); }
-.hero-sub {
+.hero-video h1 em { font-style: normal; color: var(--ice); }
+.hv-sub {
   font-size: 15px; line-height: 1.65;
   color: var(--text-secondary);
   margin-bottom: 18px;
   max-width: 520px;
   margin-left: auto; margin-right: auto;
 }
-.hero-meta {
+.hv-meta {
   display: flex; gap: 16px; flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 0;
 }
-.hero-meta span {
+.hv-meta span {
   font-size: 13px; font-weight: 600;
   color: var(--text-dim);
 }
-.hero-meta b { color: var(--ice); }
+.hv-meta b { color: var(--ice); }
 
 /* ═══ CONTENT ═══ */
 .content {
@@ -497,17 +498,21 @@ body::before {
 <body>
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-video-wrap">
-      <video src="videos/dsa-hero-montage.mp4" autoplay loop muted playsinline></video>
+  <section class="hero-video">
+    <div class="hv-media">
+      <video autoplay loop playsinline class="hv-clip">
+        <source src="videos/dsa-hero-montage.mp4" type="video/mp4">
+      </video>
     </div>
-    <span class="hero-eyebrow">Garage/Home Training Library</span>
-    <h1>Coached off-ice drills — <span>adding new ones weekly</span></h1>
-    <p class="hero-sub">Stickhandling and shooting drills with full video demos, form cues, and common mistakes. Built by a coach with 5 years of experience helping players transfer garage reps to game performance.</p>
-    <div class="hero-meta">
-      <span><b>26</b> drills — growing weekly</span>
-      <span><b>✓</b> Do's &amp; Don'ts</span>
-      <span><b>∞</b> Lifetime access</span>
+    <div class="hv-text">
+      <span class="hv-eyebrow">Garage/Home Training Library</span>
+      <h1>Coached off-ice drills — <em>adding new ones weekly</em></h1>
+      <p class="hv-sub">Stickhandling and shooting drills with full video demos, form cues, and common mistakes. Built by a coach with 5 years of experience helping players transfer garage reps to game performance.</p>
+      <div class="hv-meta">
+        <span><b>26</b> drills — growing weekly</span>
+        <span><b>✓</b> Do's &amp; Don'ts</span>
+        <span><b>∞</b> Lifetime access</span>
+      </div>
     </div>
   </section>
 
