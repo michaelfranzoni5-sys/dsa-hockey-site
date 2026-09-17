@@ -55,53 +55,54 @@ body::before {
 /* ═══ HERO ═══ */
 .hero-video {
   position: relative; z-index: 1;
-  padding: 32px 24px 40px;
+  padding: 20px 24px 20px;
   max-width: 750px; margin: 0 auto;
   text-align: center;
 }
 .hv-media {
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
   border: 1px solid var(--card-border);
   background: #050508;
   max-width: 100%;
   margin-left: auto; margin-right: auto;
-  margin-bottom: 28px;
+  margin-bottom: 16px;
+  cursor: pointer;
 }
 .hv-clip {
   width: 100%;
   display: block;
-  max-height: 85vh;
+  max-height: 50vh;
   object-fit: contain;
 }
 .hv-eyebrow {
   display: inline-block;
-  font-size: 12px; font-weight: 700;
-  letter-spacing: 0.22em; text-transform: uppercase;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--ice);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 .hero-video h1 {
-  font-size: clamp(30px, 4.5vw, 42px);
+  font-size: clamp(24px, 4vw, 36px);
   font-weight: 900; line-height: 1.08;
   letter-spacing: -0.02em;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
 }
 .hero-video h1 em { font-style: normal; color: var(--ice); }
 .hv-sub {
-  font-size: 15px; line-height: 1.65;
+  font-size: 14px; line-height: 1.55;
   color: var(--text-secondary);
-  margin-bottom: 18px;
+  margin-bottom: 12px;
   max-width: 520px;
   margin-left: auto; margin-right: auto;
 }
 .hv-meta {
-  display: flex; gap: 16px; flex-wrap: wrap;
+  display: flex; gap: 12px; flex-wrap: wrap;
   justify-content: center;
   margin-bottom: 0;
 }
 .hv-meta span {
-  font-size: 13px; font-weight: 600;
+  font-size: 12px; font-weight: 600;
   color: var(--text-dim);
 }
 .hv-meta b { color: var(--ice); }
@@ -115,7 +116,7 @@ body::before {
   z-index: 1;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 18px;
 }
 
 /* ═══ COACH NOTE ═══ */
@@ -511,7 +512,7 @@ body::before {
   <!-- HERO -->
   <section class="hero-video">
     <div class="hv-media">
-      <video autoplay loop playsinline class="hv-clip">
+      <video autoplay loop playsinline class="hv-clip" id="heroVideo">
         <source src="videos/dsa-hero-montage.mp4" type="video/mp4">
       </video>
     </div>
@@ -560,7 +561,7 @@ body::before {
     </div>
 
     <div class="password-note">
-      After paying, text <strong>908-675-3755</strong> — I'll send the password. Then enter it below to unlock the library.
+      After paying, text <a href="tel:19086753755" style="color:var(--ice);text-decoration:none;font-weight:700;">908-675-3755</a> — I'll send the password. Then enter it below to unlock the library.
     </div>
 
     <!-- DIVIDER -->
@@ -611,6 +612,17 @@ body::before {
   </div>
 
 <script>
+// ── Tap video to pause/play ──
+document.addEventListener('DOMContentLoaded', function() {
+  const heroVideo = document.getElementById('heroVideo');
+  if (heroVideo) {
+    heroVideo.addEventListener('click', function() {
+      if (this.paused) this.play();
+      else this.pause();
+    });
+  }
+});
+
 const CORRECT_PASSWORD = 'DSASystem9';
 
 let drills = [];
