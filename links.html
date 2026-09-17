@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DSA Hockey — Links</title>
+<title>DSA Hockey — Off-Ice Drill Library</title>
 <meta name="robots" content="noindex, nofollow">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  html { font-size: 16px; }
+  html { font-size: 16px; scroll-behavior: smooth; }
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     background: #0d1117;
@@ -16,30 +16,99 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 2rem 1.5rem;
+    padding: 0;
   }
-  .logo {
-    font-size: 2rem;
-    font-weight: 800;
-    letter-spacing: 1px;
-    margin-bottom: 0.5rem;
-    color: #fff;
+
+  /* ═══ MONTAGE VIDEO ═══ */
+  .montage-wrap {
+    width: 100%;
+    max-width: 100%;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
   }
-  .logo span { color: #58a6ff; }
-  .tagline {
-    color: #8b949e;
-    font-size: 0.95rem;
-    margin-bottom: 2rem;
-    text-align: center;
+  .montage-wrap video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
-  .links {
+  @media (max-width: 480px) { .montage-wrap { height: 220px; } }
+
+  /* ═══ CONTENT ═══ */
+  .content {
+    width: 100%;
+    max-width: 480px;
+    padding: 28px 20px 40px;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-    max-width: 360px;
+    gap: 20px;
   }
+
+  /* ═══ INTRO ═══ */
+  .intro { text-align: center; }
+  .intro h1 {
+    font-size: 1.15em;
+    font-weight: 800;
+    margin-bottom: 10px;
+    color: #fff;
+    letter-spacing: -0.01em;
+  }
+  .intro h1 span { color: #58a6ff; }
+  .intro p {
+    font-size: 0.88em;
+    color: #8b949e;
+    line-height: 1.6;
+  }
+
+  /* ═══ FREE DRILL ═══ */
+  .free-section {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 20px;
+  }
+  .free-label {
+    display: inline-block;
+    background: #238636;
+    color: #fff;
+    font-size: 0.7em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+  }
+  .free-section h2 {
+    font-size: 1em;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #fff;
+  }
+  .free-section p {
+    font-size: 0.82em;
+    color: #8b949e;
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+  .free-video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #000;
+  }
+  .free-video iframe {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+
+  /* ═══ BUTTONS ═══ */
   .btn {
     display: flex;
     flex-direction: column;
@@ -48,8 +117,8 @@
     padding: 1.5rem 1.5rem;
     border-radius: 14px;
     text-decoration: none;
-    font-weight: 600;
-    font-size: 1.1rem;
+    font-weight: 700;
+    font-size: 1.05rem;
     transition: all 0.2s;
     border: 1px solid;
     text-align: center;
@@ -76,34 +145,115 @@
     transform: translateY(-2px);
   }
   .btn small {
-    font-size: 0.8rem;
+    font-size: 0.78rem;
     font-weight: 400;
     opacity: 0.7;
     margin-top: 6px;
   }
+
+  /* ═══ TESTIMONIAL ═══ */
+  .testimonial {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 14px;
+    padding: 20px;
+    text-align: center;
+  }
+  .testimonial .stars {
+    color: #d29922;
+    font-size: 0.9em;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+  }
+  .testimonial blockquote {
+    font-size: 0.88em;
+    color: #8b949e;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 8px;
+  }
+  .testimonial cite {
+    font-size: 0.78em;
+    color: #484f58;
+    font-style: normal;
+  }
+
+  /* ═══ FOOTER ═══ */
   .footer {
-    margin-top: 2.5rem;
+    margin-top: 4px;
     font-size: 0.75rem;
     color: #484f58;
+    text-align: center;
   }
+
+  /* ═══ PASSWORD ═══ */
+  .password-note {
+    background: rgba(88, 166, 255, 0.06);
+    border: 1px solid rgba(88, 166, 255, 0.12);
+    border-radius: 10px;
+    padding: 14px 16px;
+    text-align: center;
+    font-size: 0.82em;
+    color: #8b949e;
+    line-height: 1.5;
+  }
+  .password-note strong { color: #58a6ff; }
+  .password-note a { color: #58a6ff; text-decoration: none; font-weight: 600; }
+  .password-note a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
-  <div class="logo">DSA <span>Hockey</span></div>
-  <p class="tagline">Off-ice drill library. Train in your garage.</p>
 
-  <div class="links">
+  <!-- MONTAGE -->
+  <div class="montage-wrap">
+    <video src="videos/dsa-hero-montage.mp4" autoplay loop muted playsinline></video>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content">
+
+    <!-- INTRO -->
+    <div class="intro">
+      <h1>DSA <span>Hockey</span></h1>
+      <p>These aren't generic Instagram drills. I developed every one of them coaching real players — movements I've seen build confidence, put pucks in the net, and transfer to game speed. Parents tell me: <em>"after a session with you, he's already digging pucks off the crossbar."</em></p>
+    </div>
+
+    <!-- FREE DRILL -->
+    <div class="free-section">
+      <div class="free-label">free drill</div>
+      <h2>Around the World Stickhandling</h2>
+      <p>Full 360° puck control. Try this one right now — no password needed.</p>
+      <div class="free-video">
+        <iframe src="https://www.youtube.com/embed/zpqmYlhhZvE?rel=0&modestbranding=1" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- PURCHASE -->
     <a href="https://dsahockey.com/drills/" class="btn btn-gold">
       📋 Garage/Home Training Library — $99
-      <small>Coached off-ice drills with video + form cues. Lifetime access.</small>
+      <small>26 coached drills with video + form cues. Lifetime access + updates.</small>
     </a>
 
+    <div class="password-note">
+      After paying, text <strong>908-675-3755</strong> and I'll send you the password. Simple.
+    </div>
+
+    <!-- GEAR -->
     <a href="https://dsahockey.com/gear/" class="btn btn-secondary">
       🏒 Gear I Use
       <small>Training aids, equipment &amp; accessories I recommend</small>
     </a>
+
+    <!-- TESTIMONIAL -->
+    <div class="testimonial">
+      <div class="stars">★★★★★</div>
+      <blockquote>"We've spent thousands on camps and private lessons. 8 kids share one coach for 45 minutes. With DSA I got a full drill library my daughter could start the next day. Way more value."</blockquote>
+      <cite>— Lisa R., mother of U14 player, Michigan</cite>
+    </div>
+
+    <p class="footer">DSA Hockey · Brielle, NJ · <a href="https://www.instagram.com/dsahockey/" style="color:#484f58;">@dsahockey</a></p>
+
   </div>
 
-  <p class="footer">DSA Hockey · Brielle, NJ</p>
 </body>
 </html>
