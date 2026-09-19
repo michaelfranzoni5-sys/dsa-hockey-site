@@ -904,10 +904,10 @@ function renderDrills(drillsToRender) {
           <button class="toggle-btn" onclick="showToggle(this, 'donts', ${idx})">❌ Don'ts</button>
         </div>
         <div class="toggle-content dos-list active" id="dos-${idx}">
-          <ul>${drill.dos.map(d => `<li>${d}</li>`).join('')}</ul>
+          <ul>${(drill.dos || []).map(d => `<li>${d}</li>`).join('')}</ul>
         </div>
         <div class="toggle-content donts-list" id="donts-${idx}">
-          <ul>${drill.donts.map(d => `<li>${d}</li>`).join('')}</ul>
+          <ul>${(drill.donts || []).map(d => `<li>${d}</li>`).join('')}</ul>
         </div>
       </div>
     </div>
