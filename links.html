@@ -866,10 +866,14 @@ function showToggle(btn, type, idx) {
 }
 
 let player;
+let playerReady = false;
+
 function openVideo(videoId, idx) {
   document.getElementById('videoOverlay').classList.add('active');
-  if (player) {
-    player.loadVideoById(videoId);
+  if (playerReady && player) {
+    player.cueVideoById(videoId, 0, 'hd1080');
+    player.setPlaybackQuality('hd1080');
+    player.playVideo();
   }
 }
 document.getElementById('videoClose').addEventListener('click', () => {
@@ -879,8 +883,32 @@ document.getElementById('videoClose').addEventListener('click', () => {
 
 function onYouTubeIframeAPIReady() {
   player = new YT.Player('youtubePlayer', {
-    height: '100%', width: '100%',
-    playerVars: { rel: 0, modestbranding: 1 }
+    height: '100%',
+    width: '100%',
+    playerVars: {
+      autoplay: 1,
+      rel: 0,
+      modestbranding: 1,
+      playsinline: 1,
+      controls: 1,
+      vq: 'hd1080'
+    },
+    events: {
+      'onReady': () => {
+        playerReady = true;
+        player.setPlaybackQuality('hd1080');
+      },
+      'onStateChange': function(event) {
+        if (event.data === YT.PlayerState.PLAYING) {
+          let attempts = 0;
+          const forceHd = setInterval(() => {
+            attempts++;
+            event.target.setPlaybackQuality('hd1080');
+            if (attempts >= 20) clearInterval(forceHd);
+          }, 500);
+        }
+      }
+    }
   });
 }
 </script>
