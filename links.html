@@ -723,7 +723,7 @@ document.addEventListener('DOMContentLoaded', function() {
 const CORRECT_PASSWORD = 'DSASystem9';
 
 let drills = [];
-fetch('drills/drills.json')
+fetch('drills/drills.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     drills = data;

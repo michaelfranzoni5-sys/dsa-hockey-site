@@ -741,7 +741,7 @@ const CORRECT_PASSWORD = 'DSASystem9';
 // ── Load drills ──
 let drills = [];
 
-fetch('drills.json')
+fetch('drills.json?v=' + Date.now())
   .then(r => r.json())
   .then(data => {
     drills = data;
