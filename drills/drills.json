@@ -647,5 +647,19 @@
     "whatYouNeed": "A net, pucks",
     "dos": [],
     "donts": []
+  },
+  {
+    "id": "drill-shortside-shooting",
+    "title": "Shortside Shooting",
+    "category": "shooting",
+    "duration": "3:33",
+    "youtubeId": "",
+    "youtubeIds": [
+      "mm3YEXp9aow"
+    ],
+    "description": "Shooting to the short side — the near post where the goalie has to beat you across. Train picking the short side early and snapping it off before the goalie can square up.",
+    "whatYouNeed": "A net, pucks",
+    "dos": [],
+    "donts": []
   }
 ]
