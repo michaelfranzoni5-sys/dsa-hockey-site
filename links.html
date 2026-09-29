@@ -8,7 +8,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
-<script src="https://www.youtube.com/iframe_api"></script>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 html { scroll-behavior: smooth; }
@@ -704,7 +703,15 @@ body::before {
   <div class="video-overlay" id="videoOverlay">
     <div class="video-container">
       <button class="video-close" id="videoClose">✕</button>
-      <div id="youtubePlayer"></div>
+      <iframe
+        id="youtubePlayer"
+        style="position:absolute;top:0;left:0;width:100%;height:100%;border:none;"
+        frameborder="0"
+        allowfullscreen
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        referrerpolicy="strict-origin-when-cross-origin"
+        title="YouTube video player"
+      ></iframe>
     </div>
   </div>
 
@@ -865,52 +872,17 @@ function showToggle(btn, type, idx) {
   document.getElementById(`${type}-${idx}`).classList.add('active');
 }
 
-let player;
-let playerReady = false;
-
+// ── Video player (src-based for reliable 1080p on all devices) ──
 function openVideo(videoId, idx) {
-  document.getElementById('videoOverlay').classList.add('active');
-  if (playerReady && player) {
-    player.cueVideoById(videoId, 0, 'hd1080');
-    player.setPlaybackQuality('hd1080');
-    player.playVideo();
-  }
+  const overlay = document.getElementById('videoOverlay');
+  const iframe = document.getElementById('youtubePlayer');
+  overlay.classList.add('active');
+  iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0&modestbranding=1&playsinline=1&controls=1&vq=hd1080&enablejsapi=1';
 }
 document.getElementById('videoClose').addEventListener('click', () => {
   document.getElementById('videoOverlay').classList.remove('active');
-  if (player) player.stopVideo();
+  document.getElementById('youtubePlayer').src = '';
 });
-
-function onYouTubeIframeAPIReady() {
-  player = new YT.Player('youtubePlayer', {
-    height: '100%',
-    width: '100%',
-    playerVars: {
-      autoplay: 1,
-      rel: 0,
-      modestbranding: 1,
-      playsinline: 1,
-      controls: 1,
-      vq: 'hd1080'
-    },
-    events: {
-      'onReady': () => {
-        playerReady = true;
-        player.setPlaybackQuality('hd1080');
-      },
-      'onStateChange': function(event) {
-        if (event.data === YT.PlayerState.PLAYING) {
-          let attempts = 0;
-          const forceHd = setInterval(() => {
-            attempts++;
-            event.target.setPlaybackQuality('hd1080');
-            if (attempts >= 20) clearInterval(forceHd);
-          }, 500);
-        }
-      }
-    }
-  });
-}
 </script>
 </body>
 </html>
