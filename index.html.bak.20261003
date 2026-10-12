@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSA Hockey | Off-Ice Drill Library — Train in Your Garage</title>
+<link rel="icon" href="images/dsa-logo.png" type="image/png">
+<meta name="description" content="30 off-ice hockey drills with video walkthroughs. Stickhandling and shooting drills. Lifetime access from Mike Franzoni — a coach who knows the garage.">
+<meta name="keywords" content="hockey drills, off-ice hockey training, hockey stickhandling drills, hockey shooting drills, garage hockey training, youth hockey drills, hockey training at home, hockey video drills">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://dsahockey.com/">
+
+<!-- Open Graph -->
+<meta property="og:title" content="DSA Hockey | Off-Ice Drill Library">
+<meta property="og:description" content="30 off-ice hockey drills with video walkthroughs. Lifetime access.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://dsahockey.com/">
+<meta property="og:image" content="https://dsahockey.com/images/dsa-logo.png">
+<meta property="og:site_name" content="DSA Hockey">
+<meta property="og:locale" content="en_US">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DSA Hockey | Off-Ice Drill Library">
+<meta name="twitter:description" content="30 off-ice hockey drills with video walkthroughs. Lifetime access.">
+<meta name="twitter:image" content="https://dsahockey.com/images/dsa-logo.png">
+
+<!-- Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "SportsActivityLocation",
+  "name": "DSA Hockey",
+  "description": "Off-ice hockey drill library. 30 coached drills with video walkthroughs for stickhandling and shooting.",
+  "url": "https://dsahockey.com/",
+  "telephone": "+1-908-675-3755",
+  "email": "dsahockeynj@gmail.com",
+  "priceRange": "$99",
+  "serviceType": [
+    "Hockey Drill Library",
+    "Off-Ice Hockey Training",
+    "Youth Hockey Drills"
+  ],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "DSA Hockey Services",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Garage/Home Training Library",
+          "description": "30 off-ice drills across 2 categories: stickhandling and shooting. Lifetime access.",
+          "price": "99",
+          "priceCurrency": "USD"
+        }
+      }
+    ]
+  },
+  "sameAs": [
+    "https://www.instagram.com/dsahockey/"
+  ]
+}
+</script>
+<style>
+/* ═══════════════════════════════════════════════
+   DSA HOCKEY — Premium Landing Page v2.0
+   ═══════════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #050508;
+  color: #fff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+  touch-action: manipulation;
+}
+* { -webkit-tap-highlight-color: transparent; }
+
+:root {
+  --ice: #8ab4f8;
+  --ice-light: #a8ccff;
+  --ice-dark: #5b96e0;
+  --ice-glow: rgba(138, 180, 248, 0.15);
+  --ice-glow-strong: rgba(138, 180, 248, 0.25);
+  --bg: #050508;
+  --card: rgba(255, 255, 255, 0.03);
+  --card-hover: rgba(255, 255, 255, 0.06);
+  --card-border: rgba(255, 255, 255, 0.06);
+  --card-border-hover: rgba(138, 180, 248, 0.3);
+  --text: #e8eaed;
+  --text-secondary: #9aa0a6;
+  --text-dim: #5f6368;
+  --radius: 16px;
+  --radius-sm: 10px;
+}
+
+/* ═══ UTILITIES ═══ */
+.container { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+@media (max-width: 480px) { .container { padding: 0 16px; } }
+@media (min-width: 1200px) { .container { max-width: 1100px; } }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+/* touch-friendly tap targets */
+a, button { min-height: 44px; min-width: 44px; }
+/* tel links inherit surrounding color — no blue link styling */
+a.tel-link { color: inherit; text-decoration: none; }
+
+/* ═══ GRADIENT MESH BACKGROUND ═══ */
+body::before {
+  content: '';
+  position: fixed;
+  top: -40%; left: -20%;
+  width: 140%; height: 140%;
+  background:
+    radial-gradient(ellipse 600px 400px at 20% 10%, rgba(138,180,248,0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 500px at 80% 30%, rgba(91,150,224,0.04) 0%, transparent 70%),
+    radial-gradient(ellipse 400px 300px at 50% 80%, rgba(138,180,248,0.03) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ═══ NAV ═══ */
+.nav {
+  position: fixed; top: 0; left: 0; right: 0;
+  z-index: 100;
+  background: rgba(5, 5, 8, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 14px 0;
+}
+.nav-inner {
+  max-width: 720px; margin: 0 auto; padding: 0 24px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+@media (min-width: 1200px) { .nav-inner { max-width: 1100px; } }
+.nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; color: #fff; }
+.nav-logo img { height: 32px; width: 32px; border-radius: 6px; }
+.nav-logo span { font-weight: 800; font-size: 0.95em; letter-spacing: -0.02em; }
+.nav-cta {
+  background: var(--ice); color: #050508;
+  padding: 8px 18px; border-radius: 8px;
+  text-decoration: none; font-weight: 700; font-size: 0.85em;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--ice-light); transform: translateY(-1px); }
+.nav-link {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.85em;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-link:hover { color: #fff; background: rgba(255,255,255,0.05); }
+@media (max-width: 600px) {
+  .nav-link { display: none; }
+}
+@media (max-width: 480px) {
+  .nav-inner { padding: 0 16px; }
+  .nav-logo span { font-size: 0.85em; }
+  .nav-cta { padding: 8px 14px; font-size: 0.78em; }
+  .nav-link { font-size: 0.78em; padding: 8px 10px; }
+}
+@media (max-width: 360px) {
+  .nav-cta { font-size: 0.72em; padding: 8px 10px; }
+  .nav-link { font-size: 0.72em; padding: 8px 8px; }
+  .nav-logo span { font-size: 0.8em; }
+  .nav-logo img { height: 28px; width: 28px; }
+}
+
+/* ═══ HERO ═══ */
+.hero {
+  position: relative; z-index: 1;
+  padding: 140px 20px 80px;
+  overflow: hidden;
+}
+@media (max-width: 600px) { .hero { padding: 120px 16px 60px; } }
+@media (max-width: 380px) { .hero { padding: 110px 12px 50px; } }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 600px; height: 400px;
+  background: radial-gradient(ellipse, rgba(138,180,248,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-grid {
+  max-width: 1000px; margin: 0 auto;
+  display: grid;
+  grid-template-columns: 0.85fr 1.15fr;
+  gap: 48px;
+  align-items: center;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 28px; text-align: center; }
+}
+.hero-visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-photo {
+  width: 100%;
+  max-width: 340px;
+  border-radius: var(--radius);
+  border: 2px solid rgba(138,180,248,0.12);
+  box-shadow: 0 0 60px rgba(138,180,248,0.08);
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+@media (max-width: 480px) { .hero-photo { max-width: 260px; } }
+.hero-logo-overlay {
+  position: absolute;
+  bottom: -8px; right: -8px;
+  width: 56px; height: 56px;
+  border-radius: 14px;
+  border: 2px solid rgba(5,5,8,0.8);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+}
+@media (max-width: 480px) { .hero-logo-overlay { width: 44px; height: 44px; bottom: -4px; right: 4px; } }
+.hero-content {
+  text-align: left;
+}
+@media (max-width: 768px) { .hero-content { text-align: center; } }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: var(--ice-glow);
+  border: 1px solid rgba(138,180,248,0.2);
+  padding: 6px 14px; border-radius: 100px;
+  font-size: 0.78em; font-weight: 600;
+  color: var(--ice);
+  margin-bottom: 28px;
+  letter-spacing: 0.03em;
+}
+@media (max-width: 480px) { .hero-badge { font-size: 0.72em; padding: 5px 12px; margin-bottom: 22px; } }
+.hero-badge .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ice); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+.hero h1 {
+  font-size: clamp(2.2em, 7vw, 3.2em);
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #fff 0%, var(--ice-light) 50%, var(--ice) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.hero .tagline {
+  font-size: clamp(1em, 3vw, 1.15em);
+  color: var(--text-secondary);
+  margin-bottom: 36px;
+  max-width: 500px;
+  margin-left: 0;
+  margin-right: auto;
+  line-height: 1.6;
+}
+@media (max-width: 768px) { .hero .tagline { margin-left: auto; margin-right: auto; } }
+.hero-cta {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: linear-gradient(135deg, var(--ice), var(--ice-dark));
+  color: #050508;
+  padding: 16px 36px; border-radius: 12px;
+  text-decoration: none; font-weight: 800; font-size: 1.05em;
+  letter-spacing: -0.01em;
+  transition: all 0.3s;
+  box-shadow: 0 4px 24px rgba(138,180,248,0.3);
+}
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(138,180,248,0.4);
+}
+.hero-cta svg { width: 18px; height: 18px; }
+@media (max-width: 480px) {
+  .hero-cta { padding: 14px 28px; font-size: 0.95em; }
+}
+@media (max-width: 380px) {
+  .hero-cta { padding: 12px 24px; font-size: 0.88em; gap: 8px; }
+  .hero-cta svg { width: 16px; height: 16px; }
+}
+.hero-sub {
+  margin-top: 14px;
+  font-size: 0.82em;
+  color: var(--text-dim);
+}
+.hero-sub strong { color: var(--text-secondary); }
+
+/* ═══ HERO PULL QUOTE ═══ */
+.hero-quote {
+  max-width: 420px;
+  margin: 24px auto 28px;
+  padding: 0 0 0 18px;
+  border-left: 2px solid rgba(138, 180, 248, 0.2);
+  text-align: left;
+}
+.hero-quote p {
+  font-size: 0.85em;
+  font-style: italic;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+.hero-quote cite {
+  font-size: 0.72em;
+  font-style: normal;
+  color: var(--text-dim);
+  display: block;
+}
+@media (max-width: 480px) {
+  .hero-quote { margin: 20px auto 24px; padding: 0 0 0 14px; }
+  .hero-quote p { font-size: 0.82em; }
+}
+
+/* ═══ SECTIONS ═══ */
+.section {
+  position: relative; z-index: 1;
+  padding: 70px 0;
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+@media (max-width: 600px) { .section { padding: 50px 0; } }
+@media (max-width: 380px) { .section { padding: 40px 0; } }
+.section-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+@media (max-width: 480px) { .section-header { margin-bottom: 32px; } }
+.section-header h2 {
+  font-size: clamp(1.4em, 4.5vw, 1.9em);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+  color: #fff;
+}
+.section-header p {
+  font-size: 1em;
+  color: var(--text-secondary);
+  max-width: 480px;
+  margin: 0 auto;
+}
+.accent { color: var(--ice); }
+
+/* ═══ PROCESS (What's Inside) ═══ */
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 480px) { .process-grid { gap: 12px; } }
+@media (max-width: 380px) { .process-grid { grid-template-columns: 1fr; gap: 12px; } }
+
+.process-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 22px;
+  text-align: center;
+  transition: all 0.3s;
+}
+@media (max-width: 480px) { .process-card { padding: 22px 16px; } }
+.process-card:hover {
+  background: var(--card-hover);
+  border-color: rgba(138,180,248,0.15);
+  transform: translateY(-2px);
+}
+.process-num {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 44px; height: 44px;
+  background: var(--ice-glow);
+  border: 1px solid rgba(138,180,248,0.2);
+  border-radius: 12px;
+  font-size: 1.1em; font-weight: 800;
+  color: var(--ice);
+  margin-bottom: 14px;
+}
+.process-card h3 {
+  font-size: 0.95em; font-weight: 700;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.process-card p {
+  font-size: 0.82em;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ═══ PRICING ═══ */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 800px) { .pricing-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .pricing-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; } }
+
+.pricing-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 32px 24px;
+  text-align: center;
+  transition: all 0.3s;
+  position: relative;
+}
+@media (max-width: 480px) { .pricing-card { padding: 26px 18px; } }
+.pricing-card:hover {
+  border-color: var(--card-border-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+.pricing-card.featured {
+  background: rgba(138,180,248,0.04);
+  border-color: rgba(138,180,248,0.25);
+}
+
+.pricing-card h3 {
+  font-size: 1em; font-weight: 700;
+  margin-bottom: 4px;
+  color: #fff;
+}
+.pricing-card .price {
+  font-size: 2.4em; font-weight: 900;
+  color: #fff;
+  margin: 12px 0;
+  letter-spacing: -0.03em;
+}
+.pricing-card .price span {
+  font-size: 0.38em; font-weight: 500;
+  color: var(--text-dim);
+  letter-spacing: 0;
+}
+.pricing-card ul {
+  list-style: none;
+  text-align: left;
+  margin: 20px 0;
+}
+.pricing-card ul li {
+  font-size: 0.82em;
+  color: var(--text-secondary);
+  padding: 6px 0;
+  padding-left: 22px;
+  position: relative;
+}
+.pricing-card ul li::before {
+  content: '✓';
+  position: absolute; left: 0;
+  color: var(--ice);
+  font-weight: 700;
+}
+.pricing-btn {
+  display: block;
+  width: 100%;
+  background: var(--ice);
+  color: #050508;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.9em;
+  transition: all 0.2s;
+}
+.pricing-btn:hover { background: var(--ice-light); }
+.pricing-card.featured .pricing-btn {
+  background: linear-gradient(135deg, var(--ice), var(--ice-dark));
+  box-shadow: 0 4px 16px rgba(138,180,248,0.25);
+}
+.pricing-card.featured .pricing-btn:hover {
+  box-shadow: 0 6px 24px rgba(138,180,248,0.35);
+}
+.pricing-note {
+  margin-top: 10px;
+  font-size: 0.82em;
+  color: var(--text-dim);
+  line-height: 1.5;
+}
+.pricing-note strong { color: var(--text-secondary); }
+.pricing-note small { font-size: 0.88em; }
+.pricing-note .wa-link { color: var(--ice); }
+
+/* ═══ TESTIMONIALS ═══ */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 600px) { .testimonial-grid { grid-template-columns: 1fr; } }
+
+.testimonial-card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 28px 24px;
+  transition: all 0.3s;
+}
+@media (max-width: 480px) { .testimonial-card { padding: 22px 18px; } }
+.testimonial-card:hover {
+  background: var(--card-hover);
+  border-color: rgba(138,180,248,0.15);
+}
+.testimonial-stars {
+  color: var(--ice);
+  font-size: 0.85em;
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+.testimonial-quote {
+  font-size: 0.9em;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.testimonial-author {
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--text);
+}
+.testimonial-role {
+  font-size: 0.75em;
+  color: var(--text-dim);
+  margin-top: 2px;
+}
+
+/* ═══ FAQ ═══ */
+.faq-list {
+  max-width: 580px;
+  margin: 0 auto;
+}
+@media (max-width: 480px) { .faq-list { max-width: 100%; } }
+.faq-item {
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  padding: 20px 0;
+}
+.faq-item:last-child { border-bottom: none; }
+.faq-item h3 {
+  font-size: 0.95em;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 8px;
+}
+.faq-item p {
+  font-size: 0.88em;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ═══ BOTTOM CTA ═══ */
+.cta-section {
+  position: relative; z-index: 1;
+  padding: 80px 0 100px;
+  text-align: center;
+}
+@media (max-width: 600px) { .cta-section { padding: 60px 0 80px; } }
+@media (max-width: 380px) { .cta-section { padding: 50px 0 60px; } }
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%; transform: translateX(-50%);
+  width: 500px; height: 300px;
+  background: radial-gradient(ellipse, rgba(138,180,248,0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-section h2 {
+  font-size: clamp(1.6em, 5vw, 2.2em);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+.cta-section p {
+  font-size: 1em;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+.cta-section .instructions {
+  font-size: 0.85em;
+  color: var(--text-dim);
+  margin-bottom: 32px;
+  max-width: 420px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.cta-section .instructions strong { color: var(--text-secondary); }
+
+/* ═══ FOOTER ═══ */
+.footer {
+  position: relative; z-index: 1;
+  padding: 40px 0;
+  border-top: 1px solid rgba(255,255,255,0.03);
+  text-align: center;
+}
+@media (max-width: 480px) { .footer { padding: 32px 0; } }
+.footer p {
+  font-size: 0.95em;
+  color: var(--text-secondary);
+  margin-bottom: 8px;
+}
+@media (max-width: 480px) { .footer p { font-size: 0.88em; } }
+.footer a {
+  color: var(--ice);
+  text-decoration: none;
+  font-weight: 600;
+}
+.footer a.tel-link { color: var(--text-secondary); }
+.footer a:hover { color: var(--ice-light); }
+.footer .footer-divider {
+  margin: 0 8px;
+  color: var(--text-dim);
+}
+
+/* ═══ DIVIDER ═══ */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(138,180,248,0.1), transparent);
+  margin: 0;
+}
+
+/* ═══ ABOUT ═══ */
+.about-grid {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.about-img {
+  flex-shrink: 0;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(138,180,248,0.2);
+  box-shadow: 0 0 40px rgba(138,180,248,0.08);
+}
+.about-text h3 {
+  font-size: 1.2em;
+  font-weight: 800;
+  margin-bottom: 6px;
+  color: #fff;
+}
+.about-text .about-subtitle {
+  font-size: 0.82em;
+  font-weight: 600;
+  color: var(--ice);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 14px;
+}
+.about-text p {
+  font-size: 0.92em;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+@media (max-width: 600px) {
+  .about-grid { flex-direction: column; text-align: center; gap: 24px; }
+  .about-img { width: 220px; height: 220px; }
+      }
+      @media (max-width: 380px) {
+  .about-img { width: 180px; height: 180px; }
+  .about-text p { font-size: 0.86em; }
+}
+
+/* ═══ DESKTOP (1024px+) ═══ */
+@media (min-width: 1024px) {
+  .container { max-width: 1100px; }
+  .nav-inner { max-width: 1100px; }
+  .hero { padding: 160px 20px 90px; }
+  .hero img.logo { width: 260px; height: 260px; }
+  .hero h1 { font-size: clamp(2.6em, 5vw, 4.2em); max-width: 800px; }
+  .hero .tagline { font-size: 1.2em; max-width: 640px; }
+  .hero-quote { max-width: 520px; }
+  .hero-quote p { font-size: 0.92em; }
+  .section { padding: 90px 0; }
+  .section-header { margin-bottom: 56px; }
+  .section-header h2 { font-size: clamp(1.6em, 3.5vw, 2.4em); }
+  .section-header p { font-size: 1.1em; max-width: 600px; }
+  .process-grid { gap: 20px; }
+  .process-card { padding: 34px 28px; }
+  .process-card p { font-size: 0.88em; }
+  .pricing-grid { gap: 20px; }
+  .pricing-card { padding: 36px 28px; }
+  .testimonial-grid { gap: 20px; }
+  .testimonial-card { padding: 32px 28px; }
+  .cta-section { padding: 100px 0 120px; }
+  .faq-list { max-width: 720px; }
+  .about-grid { gap: 48px; }
+  .about-img { width: 320px; height: 320px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <img src="images/dsa-logo.png" alt="DSA Hockey">
+      <span>DSA Hockey</span>
+    </a>
+    <a href="/drills/" class="nav-cta">Get the Library</a>
+    <a href="/gear/" class="nav-link">Training Gear</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid">
+    <div class="hero-visual">
+      <img src="images/mike-headshot.jpg" alt="Mike Franzoni — DSA Hockey Coach" class="hero-photo">
+      <img src="images/dsa-logo.png" alt="DSA Hockey" class="hero-logo-overlay">
+    </div>
+    <div class="hero-content">
+      <div class="hero-badge"><span class="dot"></span> 30 coached drills</div>
+      <h1>The Garage/Home Training Library</h1>
+      <p class="tagline">30 off-ice drills with video walkthroughs — stickhandling and shooting. Built by a coach who knows what transfers to the ice.</p>
+      <div class="hero-quote">
+        <p>"I spent countless hours in the garage shooting pucks. That's where I really learned to shoot — just me, a net, and a bucket of pucks."</p>
+        <cite>— Brendan Gallagher — 13 seasons, Montreal Canadiens</cite>
+      </div>
+      <a href="/drills/" class="hero-cta">
+        Get the Library — $99
+        <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"/></svg>
+      </a>
+      <p class="hero-sub">Lifetime access. New drills added regularly. <strong>Password-protected library</strong> — text me for the code.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT ME -->
+<section class="section">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <h3>Mike Franzoni</h3>
+        <div class="about-subtitle">Founder — DSA Hockey</div>
+        <p>I'm Mike Franzoni, a former junior hockey player with 4 years of coaching experience. I built this drill library for players who want to get better in their own garage — no ice time required. Every drill comes from real coaching experience and is designed to transfer straight to game situations.</p>
+        <p style="margin-top:14px;"><a href="https://www.instagram.com/dsahockey/" target="_blank" rel="noopener" style="color:var(--ice);text-decoration:none;font-weight:600;">@dsahockey on Instagram →</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INSIDE -->
+<section class="section" id="inside">
+  <div class="container">
+    <div class="section-header">
+      <h2>What's <span class="accent">Inside</span></h2>
+      <p>30 off-ice drills with video walkthroughs — stickhandling and shooting. Form cues and common mistakes for every drill.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-card">
+        <div class="process-num">🏒</div>
+        <h3>Stickhandling</h3>
+        <p>16 drills. Warm-up through advanced — soft hands, puck control, and handling pressure in tight spaces.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">🎯</div>
+        <h3>Shooting</h3>
+        <p>14 drills. Quick release, one-timers, backhands, drag shots, and breakaway moves that finish.</p>
+      </div>
+      <div class="process-card">
+        <div class="process-num">✅</div>
+        <h3>New Drills Added</h3>
+        <p>The library keeps growing. Buy once, get updates forever — new drills when I add them.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="container">
+    <div class="section-header">
+      <h2>One Price. <span class="accent">Lifetime Access.</span></h2>
+      <p>No subscriptions. No monthly fees. Pay once and own the library forever.</p>
+    </div>
+    <div class="pricing-grid" style="grid-template-columns:1fr;max-width:400px;margin:0 auto;">
+      <div class="pricing-card featured">
+        <h3>Garage/Home Training Library</h3>
+        <div class="price">$99<span>/lifetime</span></div>
+        <ul>
+          <li>30 off-ice drills — stickhandling + shooting</li>
+          <li>Video walkthroughs with coach commentary</li>
+          <li>Form cues, rep schemes, common mistakes</li>
+          <li>Lifetime access + free updates</li>
+          <li>Password-protected at <a href="/drills/" style="color:var(--ice);text-decoration:none;">dsahockey.com/drills/</a></li>
+        </ul>
+        <a href="https://paypal.me/MichaelFranzoni99/99" class="pricing-btn">Pay $99 — Lifetime Access</a>
+        <p class="pricing-note">After paying, text me at <strong>908-675-3755</strong> and I'll send the password to unlock the library.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header">
+      <h2>FAQ</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <h3>What kind of drills are in the library?</h3>
+        <p>30 off-ice drills across 2 categories: stickhandling (16) and shooting (14). Each drill includes a video walkthrough, coach-written form cues, common mistakes, and rep schemes.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Is this for younger players too?</h3>
+        <p>Absolutely. The best time to build good habits is early. Drills are designed to work for all ages and skill levels — from 9-year-olds learning puck control to older players refining their technique.</p>
+      </div>
+      <div class="faq-item">
+        <h3>What equipment do I need?</h3>
+        <p>Stick, pucks (golf balls work for tight spaces), 3 tires or cones, a chair, a net or garage door with a target, and space to move. Nothing crazy — most of it you probably already have.</p>
+      </div>
+      <div class="faq-item">
+        <h3>How do I get access after I pay?</h3>
+        <p>Pay via PayPal above, then text me at <strong>908-675-3755</strong>. I'll send you the password to unlock the drill library at <a href="/drills/" style="color:var(--ice);text-decoration:none;">dsahockey.com/drills/</a>. Quick and simple.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Do you add new drills?</h3>
+        <p>Yes — the library keeps growing. Buy once and you get all future updates for free. When I add new drills, you'll have access to them.</p>
+      </div>
+      <div class="faq-item">
+        <h3>Can I pay another way besides PayPal?</h3>
+        <p>Text me at <strong>908-675-3755</strong> and we can work out another option.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOTTOM CTA -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to <span class="accent">Train Like You Mean It</span>?</h2>
+    <p>Get the Garage/Home Training Library — 30 coached drills, lifetime access.</p>
+    <a href="https://paypal.me/MichaelFranzoni99/99" class="hero-cta">
+      Get the Library — $99
+      <svg viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z"/></svg>
+    </a>
+    <p class="hero-sub" style="margin-top:14px;">After paying, text <strong>908-675-3755</strong> and I'll send you the password.</p>
+  </div>
+</section>
+
+<!-- CROSS-LINKS -->
+<div class="cross-links" style="position:relative;z-index:1;text-align:center;padding:0 0 40px;">
+  <div style="display:inline-flex;gap:8px;flex-wrap:wrap;justify-content:center;">
+    <a href="/drills/" style="padding:8px 18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:100px;color:var(--text-secondary);text-decoration:none;font-size:0.82em;font-weight:600;transition:all 0.2s;">📋 Garage Library</a>
+    <a href="/gear/" style="padding:8px 18px;background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.06);border-radius:100px;color:var(--text-secondary);text-decoration:none;font-size:0.82em;font-weight:600;transition:all 0.2s;">🏒 Gear</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <p><a href="https://www.instagram.com/dsahockey/" target="_blank">@dsahockey</a></p>
+    <p>📞 <a href="tel:+190****3755" class="tel-link">908-675-3755</a> <span class="footer-divider">·</span> <a href="https://wa.me/19086753755" style="color:var(--text-secondary);text-decoration:none;">💬 WhatsApp</a> <span class="footer-divider">·</span> ✉️ <a href="mailto:dsahockeynj@gmail.com">dsahockeynj@gmail.com</a></p>
+    <p style="margin-top:16px;">DSA Hockey © 2026</p>
+  </div>
+</footer>
+
+</body>
+</html>
